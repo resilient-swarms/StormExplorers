@@ -1,0 +1,23 @@
+From: Luke Beatman <luke.beatman@liquidr.com>
+Date: Wed, Nov 20, 2013 at 12:51 PM
+Subject: PacX data submission
+To: Thomas Ryan - NOAA Federal <thomas.ryan@noaa.gov>
+Cc: Sotiria Lampoudi <sotiria.lampoudi@liquidr.com>, Tracy Villareal 
+<tracyv@austin.utexas.edu>
+
+
+Hello Thomas
+I have uploaded a zip file to your ftp server, pacx.zip, to be archived.  
+The zip file contains a directory for each of the 4 gliders deployed, a 
+NODC EDDF, as well as other relevant metedata files and documentation.  
+Let me know if you have any questions.
+Thank you.
+
+-- 
+Luke Beatman
+Liquid Robotics Payload Data Validation Lead
+1329 Moffett Park Drive
+Sunnyvale, CA 94089
+
+Direct Line: 408-636-4265
+Cell: 831-295-2177

@@ -1,0 +1,1730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accession manifest_version='2'>
+  <head>
+    <id>0114435</id>
+    <version>1.1</version>
+    <timestamp>2013-12-04 11:17:23+00</timestamp>
+    <host>mare</host>
+    <directory>/nodc/archive/arc0062/0114435/1.1/</directory>
+    <file_count>78</file_count>
+    <byte_count>166040867</byte_count>
+  </head>
+  <files>
+    <file>
+      <path>NODC-Readme.txt</path>
+      <digest algorithm='md5'>1aa8d73d906b820f8f3460b304215b17</digest>
+      <digest algorithm='sha1'>42d3e4677f04d8b256b110018e5541e1dd89eacf</digest>
+      <digest algorithm='sha256'>7b64d8de0cc632362642100dfcb02bf75e540ab1620ffb17e990dbbfc81b23be</digest>
+      <digest algorithm='sha384'>19cef9e1b00b7ce287bd9e1073cd54788faebd3152b65df8395df6fcafdd7b697dc20a2769f0234aa3d3207104010c9c</digest>
+      <digest algorithm='sha512'>9a4775c7161a3aefe10c92783bff4c5bf2c7aecaab66aea5b043408077645e9d4bccbf88ae3c8fd0d57fbae5883ff9cb0f5436b8bb2c20816326bc2fc2b80027</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rw-r--r--</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>2129</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2009-01-29 15:52:27+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:24+00</sumtime>
+      <inode>64749597</inode>
+    </file>
+    <file>
+      <path>about</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>2</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 11:49:14+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:18+00</acctime>
+      <sumtime>2013-12-04 11:17:24+00</sumtime>
+      <inode>64749595</inode>
+    </file>
+    <file>
+      <path>about/0-email.txt</path>
+      <digest algorithm='md5'>3492d85fac8f899e58a5e0920fefbc59</digest>
+      <digest algorithm='sha1'>0967d8bfde0cffa991960de3bc59c6f1d656dd5b</digest>
+      <digest algorithm='sha256'>9a58cbbe022273a96aa1befc0af1dfff3c512411844b4a38ef577e84cacf9e08</digest>
+      <digest algorithm='sha384'>99434a3662b9c528b536d411125f3efdc03aa0b135f2dc64c37c22613d46103c1a8223526f3ec2331e5ee89c22b19f6e</digest>
+      <digest algorithm='sha512'>91b39162106b06d50b5ef2d3b7f8f31d82261f42718c08634022f4c6cd630ac5fdb8a2aadbd13e7425121814e575dfe9774db3ab141244f5f209f2ba1925448f</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rw-r--r--</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>702</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-26 19:48:47+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:24+00</sumtime>
+      <inode>64749599</inode>
+    </file>
+    <file>
+      <path>about/0114435_lonlat.txt</path>
+      <digest algorithm='md5'>9d4a82b0aa2f65de9f6078f310684611</digest>
+      <digest algorithm='sha1'>0ed22f94e83fbcb55ad74b8e69aa4c6089c15a49</digest>
+      <digest algorithm='sha256'>b8443df18016ae320e349b21752dfad6249b02b11c7cc8635bb96427a824e542</digest>
+      <digest algorithm='sha384'>741f8b3d2ecddb844cf38678969f8813bfd6326a6b5488d8a61a96ac674b3c6df5665cb40123090d90fc87b9de916f03</digest>
+      <digest algorithm='sha512'>a7f74b139100c93564e4293b18561a71da8c07b3bccb48dfbaa4e242ea4ba60ae6cf7da08de6fb8965dbe589d2327388e5ee46fbabf91bfe439ed19266790a03</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rw-r--r--</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>20087113</size>
+      <blksize>32768</blksize>
+      <blocks>39240</blocks>
+      <modtime>2013-11-20 20:26:18+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749601</inode>
+    </file>
+    <file>
+      <path>about/0114435_map.jpg</path>
+      <digest algorithm='md5'>396d25b59611385b196af278ef28d91e</digest>
+      <digest algorithm='sha1'>3c8f05ff85a401b21a443dc151f49fbe65127b94</digest>
+      <digest algorithm='sha256'>6980ce41cac6bef4c0ec854f5345cc270f60dd291d47ba204e3b547abc2cb488</digest>
+      <digest algorithm='sha384'>72b710bfb24ee9bd99a2a4f05bcc9113f67577025bebd6eb119e67e299e7257515b7c88442c4a01be5e0378cfeb2646f</digest>
+      <digest algorithm='sha512'>68e4362463729f9664bf04809bf31a18fab0c78e10e187c313f8f0ea4b29f3e312996cd156af572c96c1c5acf197ae4bb2caf4c3a37327b550bf42c5b38b943b</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rw-r--r--</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>199485</size>
+      <blksize>32768</blksize>
+      <blocks>392</blocks>
+      <modtime>2013-11-26 19:57:12+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749610</inode>
+    </file>
+    <file>
+      <path>about/journal.txt</path>
+      <digest algorithm='md5'>01d766837c8121e3c5f91fa4cd3b1184</digest>
+      <digest algorithm='sha1'>f49249f6148efa9a89b05f666fe1802dce2dd495</digest>
+      <digest algorithm='sha256'>138b6b4e08c9193ef73b2375b4c399b94d4a3bf5c2eb217b23257ef658cac100</digest>
+      <digest algorithm='sha384'>a988bb0e45417ed3b430bc6003a41137d49b45c694e7ee18e71a8445d9c3081f086ef0a694242e0da4db1610119215c6</digest>
+      <digest algorithm='sha512'>8b310ce218221ee06233fafab87ae7b1f8ecaa65b8a6d6b2aae9eb1a885619c8c83fe0537fde7ee8dbd91ded0601fc090d0b22d63f954732c3e3c50d10c7988b</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rw-rw-r--</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>1438</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 11:49:14+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749611</inode>
+    </file>
+    <file>
+      <path>data</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 19:44:20+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:20+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749596</inode>
+    </file>
+    <file>
+      <path>data/0-data</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 11:50:50+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:20+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749598</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>6</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 12:10:23+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:20+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749600</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/EDDF2_lvb.pdf</path>
+      <digest algorithm='md5'>2440521f204baa0b44701df2c315d8e0</digest>
+      <digest algorithm='sha1'>cb6b53a4a153fdc9be2d71bca2f23129359b6188</digest>
+      <digest algorithm='sha256'>dbced274e1488f6a0edf8e5a02b6de245ec8da399de1b3c6abcf7f7b863f47c6</digest>
+      <digest algorithm='sha384'>63e4ddfd6ebd1190c83f23a2b145e1ea804071395a05d5a0a483f968fbd76eda13356d6c22ffac96c563c28c16e22dfb</digest>
+      <digest algorithm='sha512'>84fef9aff2e336636708be9a3c2744b21d361dace4ca96cbfd20c3b8fd4f1e638e81cc64afca558aa69223dfe2f882514c43e01acd051d4732c6e9266ede120f</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>52050</size>
+      <blksize>32768</blksize>
+      <blocks>104</blocks>
+      <modtime>2013-11-20 16:53:06+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749612</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/PacX_Fluorometer_Calibration_20130410.pdf</path>
+      <digest algorithm='md5'>5898e1faaad16554988ccaed186a22ce</digest>
+      <digest algorithm='sha1'>7675c061b7b9cd19bbc5d44a86d4763945eb359f</digest>
+      <digest algorithm='sha256'>c3ef9952288a97b1f13bf5651e57e931406f485f77adbe3af89876574ed0bd14</digest>
+      <digest algorithm='sha384'>7b5d4342aa869deb9ca5ec4c748b086d1f8eaeaa242e83b025870eadea87b55abed5c2d7c57c57ac2f5162492a9825ff</digest>
+      <digest algorithm='sha512'>62816f4736d99ae06901d5a3259ba6b7cd34208c338e5f406e349b40b6a00192a551c247fa88e31640c0cd816cfd653b4262efa87daa5086c77d459bd239375d</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>216499</size>
+      <blksize>32768</blksize>
+      <blocks>424</blocks>
+      <modtime>2013-11-20 16:50:00+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749613</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/additional_pacx_airmar_calsheet.pdf</path>
+      <digest algorithm='md5'>1ca255c846f084296a0c8ced54c78344</digest>
+      <digest algorithm='sha1'>f336e21f1861df08b7d24f11da7e9da06e73d9ac</digest>
+      <digest algorithm='sha256'>0e2b327593e0215910f63f57079be517fac8824dd11b9bfd49e5cc0e2347b324</digest>
+      <digest algorithm='sha384'>86fe2bddee74047adef113c9a7b7c9c0df97d445fb8d7445ba9085a433c4569871a0373abae530c37c556f19fd57e3ad</digest>
+      <digest algorithm='sha512'>6cb3e59f1e4c13337923fc0fb461c2a7d780ba67280553100553380a169a3c12d96326376ac17b510a327a9b35d2763463113c998e4455dc1f7ffe90774023d5</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25419</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-10-29 14:30:52+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749614</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:33:25+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:20+00</acctime>
+      <sumtime>2013-12-04 11:17:27+00</sumtime>
+      <inode>64749602</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/c3_benjamin.txt</path>
+      <digest algorithm='md5'>5705518086c2ee4b19b18af1194d2e0d</digest>
+      <digest algorithm='sha1'>efede61ded1795e63380d3e969f82e5bb4e79fd3</digest>
+      <digest algorithm='sha256'>a48750f1b3dae9d7b7c31d1ba49069a2b47ff8eb6e9354dafdff8b1c1bee9941</digest>
+      <digest algorithm='sha384'>e1d8c1c0f148d732a7b98bdbc2d03b592c049ca4dfd83a7346135ba886b240d1b840e00c985580d2e392b5e01446c77b</digest>
+      <digest algorithm='sha512'>14f67127cf6d24fc5a2debbaf1bf3aa2300de87ad8aecc7217c38785f1ca96b10f5dd55d7765010be2ece0961e8bfb014a64793759ebb1c9ede8353fcc64e602</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>5233739</size>
+      <blksize>32768</blksize>
+      <blocks>10224</blocks>
+      <modtime>2013-11-20 17:10:44+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:28+00</sumtime>
+      <inode>64749619</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/ctddo_benjamin.txt</path>
+      <digest algorithm='md5'>e16c042b2c778df03cab68ccf8c7eac9</digest>
+      <digest algorithm='sha1'>ad3f6323e349f49d6708b61842fe031cf0daff38</digest>
+      <digest algorithm='sha256'>3083497777c36794f8320add49860fce5fa30f477c8b420cd5bc575a3b4fcc4d</digest>
+      <digest algorithm='sha384'>189593784392a67303b27aaf5be13f874ff21474957843714d31bbf309308b32444b1ab944337b9bd0f96ea380af04ff</digest>
+      <digest algorithm='sha512'>57f1a755e499007aceebc514569ad6957ef3347cf70ca92249fb806cf3f684035ce4e6096234f8fc8eff2c473a292da99f1b70269a9edc7e064c675c8076e62b</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>36152995</size>
+      <blksize>32768</blksize>
+      <blocks>70616</blocks>
+      <modtime>2013-11-20 17:11:00+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749620</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>2</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:42:48+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:21+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749606</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/43F0215_Post_cal.pdf</path>
+      <digest algorithm='md5'>3a4d2ec83bcdb916703055b9a59fe3be</digest>
+      <digest algorithm='sha1'>c20ae43edc5dbe015d31edc8676a77c70da7f7b3</digest>
+      <digest algorithm='sha256'>6899afe19feb7af45f905845f46f81cae7cca0ba4f50dae4830a9b8501ccccf8</digest>
+      <digest algorithm='sha384'>a9767df6e480f4ca931219e759720183b2ae104a098a0255bcbfce6aae5180b361975b8143d58d8b4aeaab716f4cc2df</digest>
+      <digest algorithm='sha512'>5ab5d59f0d73f2c34587a001dacf15d2cdb6af2365d9c89830c663a846a65b0a63c8ff89b46fe4b28be0184affc7443e8523b28b0d114b801d09ab423ca760ee</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>30851</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749623</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/43FO0215_SOCAdjusted_16-Oct-13.pdf</path>
+      <digest algorithm='md5'>f2dfdbbc25c0ccb75d589e50a19ff586</digest>
+      <digest algorithm='sha1'>da7204424b3a3411d1502de6a75dd11ea660d178</digest>
+      <digest algorithm='sha256'>609ba6eadf55fa104691187d8a272e0e8bc042ad1560d356c088fa127e434533</digest>
+      <digest algorithm='sha384'>70bb2f0f44f21a133566c97b5dc6c50c1b92360df31716f9e3c18bdbf6a69df617a457d808f454447dab54b6e38b5200</digest>
+      <digest algorithm='sha512'>ba4b2b12607c125145c0c3da8e5192c76d10f10e2d63a8b4195a4fb616e0c6a82d82862efac2ccc13f4e97bab4d678fb1a10c6362dde4ec05c1636e5c49fdad2</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>30570</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749624</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/CondCalibrationReport_Glider-0041.pdf</path>
+      <digest algorithm='md5'>f949dbcb86ed57a618eff6006f73d851</digest>
+      <digest algorithm='sha1'>ed262791cf0a8122e644092fccd6c50fcbad51ee</digest>
+      <digest algorithm='sha256'>b6dcfb6cf4743b8171bf8136ae867279deb76ca08f30400c6fed1fbe95deb7d7</digest>
+      <digest algorithm='sha384'>2a8da5164c6461ee713ecbb3c9877c44859d6b7cfea369e8f3747961d06de5d777850f116f501d5398ad8b9926f3d318</digest>
+      <digest algorithm='sha512'>e915082933a16a9c76cc31601400494429da802a9ca7151cb4ff533806103f34ae1b7678da69f158a29dea5684cba53b8918545c2afecada54e2939f16eb8d9a</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>34923</size>
+      <blksize>32768</blksize>
+      <blocks>72</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749625</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_C0041_01Oct13.pdf</path>
+      <digest algorithm='md5'>34919953d607eca42c7af305a8570dd4</digest>
+      <digest algorithm='sha1'>2197b8fc6c1a866c2f808cecad0c30da5993b5b8</digest>
+      <digest algorithm='sha256'>631474d15e1421f547407e6dec1434c1e9c8999fcdd23d6d528bab845a0543b7</digest>
+      <digest algorithm='sha384'>58372eec7a01cf40726188e84da1482dbf41e0a6387a2e071cd8689d1320a720d96cf4cfa4fe02d2b08ffcddf182b6b7</digest>
+      <digest algorithm='sha512'>c8b5c90ceda73a94aecfa5b6f848d68db7d412cb1bfd5951b5adc96a48479757a530bc140ff80206068c161b101bc76cca8c36135c0489baadf633ee788a1415</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28875</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:30+00</sumtime>
+      <inode>64749626</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_C0041_03Nov11.pdf</path>
+      <digest algorithm='md5'>f3695c99162a09d9172684c109476a6e</digest>
+      <digest algorithm='sha1'>ad6a2c1c5b4d806b715a189c70183285b5ee20c1</digest>
+      <digest algorithm='sha256'>f1605a7c50c1b229a2076af4a26266df9a83283162ba7aa80f8fd1dc6ed6f0ad</digest>
+      <digest algorithm='sha384'>836d14f3829353bdc426af722c3402118a981c6672b73de0fb1e29b4a15b9893b94a99eefa90228df313165c8778bdad</digest>
+      <digest algorithm='sha512'>c8cb760e9a4641a5902b82be8b4d827c5d2bacca7d47c3b49d288a5c90d23e539008f8e6d95591398c630bc1c6c7289224367d8ea9311d40a134f3ac81b7d0c6</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28341</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:37:58+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749627</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_C0041_25Sep13.pdf</path>
+      <digest algorithm='md5'>0fcab3586daa4c7fa385625a5bb21367</digest>
+      <digest algorithm='sha1'>b23a0c10d1b491c8bf73620ef64e17d06c73421b</digest>
+      <digest algorithm='sha256'>47800e5516bfe4384ee56efc945b63f1f6cfe478ddf040107d91abf7b265bfdb</digest>
+      <digest algorithm='sha384'>f75d23b7fcda4adc2fdd775ab5c3574b0b0786860f0f504dcf2001c18cc32b98e08119620614ef650b4613ca6bfcaa7c</digest>
+      <digest algorithm='sha512'>4ee8510bc2fe5498da9714fc7072ad10826555a0dbf2698fb4898ea953647becb35efb4338dcb58666677fa9e2de097a4044bcac9742364f6916d80ad9038e0c</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28955</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749628</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_P0041_02Nov11.pdf</path>
+      <digest algorithm='md5'>0fc2f62b98704485d8b151889199c125</digest>
+      <digest algorithm='sha1'>274a1114d7942be3045e6f18e22a895362250691</digest>
+      <digest algorithm='sha256'>a12cc4d7d909c63db8dd272ffe51f369ad7d3c5243acd0fce85243f93af182fc</digest>
+      <digest algorithm='sha384'>119c964db806382d9831c33ffecdec6aacdb661c2800c86dad184a620c384fcb89854765cf8e800f023f75c2f0ee2ba2</digest>
+      <digest algorithm='sha512'>07d4976f6a791094fc452048aeac0629966fc0d5e864c9a566d70f177a54f2156120df6ceb421b90a91f9c3923675c5780470961224b36b508ddfd2dfd6972c2</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26379</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:38:04+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749629</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_P0041_24Sep13.pdf</path>
+      <digest algorithm='md5'>b8be8f8bcdd68adbeaddf4986a38d6e4</digest>
+      <digest algorithm='sha1'>d950f078e24f4f4fa831815823e7cfbc2fa40fab</digest>
+      <digest algorithm='sha256'>5507401282ea00a0223e980703641f0bbab8c9a492e97fa5e44d6f5c785fe549</digest>
+      <digest algorithm='sha384'>c380f21f9386cf3d9b8408a34969a7f3be064ffa041a5248f761943671eeb30ec8efbfc84d609e42b305ce1f1c6d119f</digest>
+      <digest algorithm='sha512'>12787b7dd6a9b05714da73c5df2f66aec2121151bbbe586dfce53db64de24543c7eac648222902e73c3fd111d64655c74434dd86366f5b9b76c3d1f0879967cd</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26377</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749630</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_T0041_01Oct13.pdf</path>
+      <digest algorithm='md5'>f4bdba5804fd9bbe5a840992ca1a5a54</digest>
+      <digest algorithm='sha1'>7e3bc7503c2017f36df139b735a8cf8fd95f12fb</digest>
+      <digest algorithm='sha256'>f4c2dbf969759c87ebb96c233c757bb9f0e41158cbfb06074469de1ba51ef832</digest>
+      <digest algorithm='sha384'>ba3215f18a03ca65dd8790f064e5d8fe4dcf6492f7e0cf8dcd624ac2108e490d5c92c9b34942c88ace7b5580d90871a3</digest>
+      <digest algorithm='sha512'>4196aaaf499de47075647cf82179f6ecae597c68d60316a29edc65a8541ad78fca5c6b7641f6e6366b1d3191ee37d3b6a202c8818193960c9ed3b59409c28e21</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26322</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749631</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_T0041_03Nov11.pdf</path>
+      <digest algorithm='md5'>6207011e87848e9abe70eb6ecef46004</digest>
+      <digest algorithm='sha1'>2886fe513d5dbbc7d90ba603018021ac5be1a4d7</digest>
+      <digest algorithm='sha256'>bd21bd8bb882a5ee1116259b2d5e335090f2a4428b46ae0cfa301fac80b5b70e</digest>
+      <digest algorithm='sha384'>02990774fbdcf46a386bee0f2bb3a6cc456b9b2e2db0ad70a86308e00627fb489fa90b25bd919c3c10a27d0f2a26b38e</digest>
+      <digest algorithm='sha512'>6394f73ae227d41f02d092465ff7081dccae3b8bbc2bb9d1e9b6a59d5961409daed07d1d919c2dc237b3e37e3546958d933cf28fc42c2977422ac40a237e1a48</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25737</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:37:56+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749632</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/Glider_Payload_CTD_T0041_25Sep13.pdf</path>
+      <digest algorithm='md5'>a80186d4afee519dfb2b350138c7876a</digest>
+      <digest algorithm='sha1'>42979a44ba556b8ee4b1c1336cde60a808267915</digest>
+      <digest algorithm='sha256'>71b73febf778534021efb09ce13c26ca2801a2121bb179f06fdba06fdc53d778</digest>
+      <digest algorithm='sha384'>2ae78eb81b47cfc075d675701c16f6cf78de86d29a87aa12a8204e75a318a95e23f241a9d24c09bbcef97ff2613cabf5</digest>
+      <digest algorithm='sha512'>cc0e968d59aed90f2c3787e07358c46dd03876b48bc19959b4a5a9be6e6e4bdc7b82c15028d07adaa54cb351c6552aafe1668b36db9482845a5b3cba889e131a</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26050</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749633</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/SBE43F_O0215_16Sep11.pdf</path>
+      <digest algorithm='md5'>8aa53af22a62f9c1103ad0b30e04e374</digest>
+      <digest algorithm='sha1'>dc4e74c139160b4de4693fa5f08099d14b108e3d</digest>
+      <digest algorithm='sha256'>3f5267a6618c434df85d67d6aa84502a73299dc997eadd38cbc72f0fd84c0087</digest>
+      <digest algorithm='sha384'>2e6961b67ef4585bc377032c034a25396531996b1e9a6ba59889ad43fe628b30a89a42d19d356d5aff3544d81e8c273f</digest>
+      <digest algorithm='sha512'>1e13926601432de68222f0fe4f101db4d440afafdd920e5a3b2df920cdab001bf911351241f230f21f403d4df0a508a75d77f8c8b8ecf5bdb5f7990dbddb0349</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29977</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-13 17:37:36+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749634</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/gpctd0041_cal_docs/TempCalibrationReport_Glider-0041.pdf</path>
+      <digest algorithm='md5'>89610543e9c40ec8b60cb1b9ccd16c54</digest>
+      <digest algorithm='sha1'>9d918c7b1dd83d06c008bc0988081824913dc8a7</digest>
+      <digest algorithm='sha256'>8fc74fba8c6f64c4b2c5375215d05759bc6392ab65e7072b58871f69283803d8</digest>
+      <digest algorithm='sha384'>d945e4473b256f9d30eab6311c05e7a5b6d318d3f6f5c303dc252dfdfcd83407705f6b1aa322ede9dc19e5c7e2dc2394</digest>
+      <digest algorithm='sha512'>0e2ece9a57ecac8d3f7a6fc2df29e4927d76f03b7414101e5f78811722187d15dbe1a064bd77d779e000382af0ef7d6835a7eceaf1e28ac12f9e467f4fff03b8</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>32455</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-10-25 13:48:14+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749635</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/moseg_benjamin.txt</path>
+      <digest algorithm='md5'>31d066f215a3022832c55fe6e82fbc95</digest>
+      <digest algorithm='sha1'>5e6490dbc38545cce5542a1a05fb1676ddacf53c</digest>
+      <digest algorithm='sha256'>8ced2a52075785a02ff87754d41c12b0548bacb10fefe202d7cbdf42c22097f5</digest>
+      <digest algorithm='sha384'>7c6cf8067b8f35688731c317ee85b502b2dd1d41399fa6f372c11cf9b2521c5d637dbe78fc59ac7f4ba2043bc4a3573f</digest>
+      <digest algorithm='sha512'>390bdf92cf25cd17763bbb7d112d4fbe5450c95f47230462b11d073c81b0452eb1194d513a3d24b53161a49aa1177b4f4c66e60a4c9819d624ae969226386ba8</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>680685</size>
+      <blksize>32768</blksize>
+      <blocks>1336</blocks>
+      <modtime>2013-11-20 17:10:58+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749621</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/benjamin/weather_benjamin.txt</path>
+      <digest algorithm='md5'>23c1ffe31b6e9946327d6bab8945ec6c</digest>
+      <digest algorithm='sha1'>6ccafef5358dbb40a34ec04c64df471d0c6b0d4d</digest>
+      <digest algorithm='sha256'>5a74718f455fc5695a067c4fdd5abf484ba184418452b86fb1bf84efac80a0f9</digest>
+      <digest algorithm='sha384'>f98987e9c4334767ad34dfc7ab2eea6968ac77a3d12f4db7525340d1e7e1f0fabb6e3cde810cf8c3c12640f1421cdf75</digest>
+      <digest algorithm='sha512'>766976383750bf493e36c78ef0803a049cba5cc4f6cca0fd7b0e66ecd4e58ef013ecb572975fad2856ca57b51728fad77c1d59ee2333d3aa0f8e74d9e91d6349</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>3972627</size>
+      <blksize>32768</blksize>
+      <blocks>7760</blocks>
+      <modtime>2013-11-20 17:11:02+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749622</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/eddf2_sec6.txt</path>
+      <digest algorithm='md5'>25b8199480e8b4924ae8681d3c1c844e</digest>
+      <digest algorithm='sha1'>8b690b228a93ce88aa2e24a2614c97c2541a2940</digest>
+      <digest algorithm='sha256'>49c3950da3f0a505dc4aa7c2dfe5aee4d15272ec0dbc30c70df05645ee44a3fd</digest>
+      <digest algorithm='sha384'>b169178453fbc08af3d948f528b87449b6a67a7e755f2a1c360468f057e04e3cf04e3b68a605781fd43f2fed08194330</digest>
+      <digest algorithm='sha512'>8f38125a965e12137f7339cdd39b0b0cf298e64f7762f792d4022207a8be30c2cc8d7cbf8cba37dd8759a42d439aa1aeecef8bca19a964a7338f6d3c0beef8e5</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4559</size>
+      <blksize>32768</blksize>
+      <blocks>16</blocks>
+      <modtime>2013-09-26 19:12:52+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749615</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:36:28+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:21+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749603</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/c3_fontaine.txt</path>
+      <digest algorithm='md5'>99a22de13d432c92030a6d133f8bc1ed</digest>
+      <digest algorithm='sha1'>edc1249713182f15c38b88d051810efc070a90e4</digest>
+      <digest algorithm='sha256'>a5e7c9b606c6a551c578e410d7ec7a2f4bbfc9b0eb0291300f3f0155f1b9cadc</digest>
+      <digest algorithm='sha384'>f4fadada9324b257af6eebcedfa6ad45ac85ec774a3cdcfd4bb72ff5485f1c91620c4e8a6f8de8ad3adec77e3046914c</digest>
+      <digest algorithm='sha512'>1d32a5a0620a7d33eb509874f060490320750bd20cd91fd11ab99efae450b679f028c367f0b7efc9a759cb9bc54a04d6972955619a29b89b86b4e29d3ee6643f</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>3075258</size>
+      <blksize>32768</blksize>
+      <blocks>6008</blocks>
+      <modtime>2013-11-20 17:12:22+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:31+00</sumtime>
+      <inode>64749636</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/ctddo_fontaine.txt</path>
+      <digest algorithm='md5'>11c8c53970cd9155dbc4c40931c667cc</digest>
+      <digest algorithm='sha1'>67917764fc418e1a9199dca9da63752d21150315</digest>
+      <digest algorithm='sha256'>35d4cd07058231980fdb247f2845a98f7f597586f6f0f2b3a00c9786a0d468db</digest>
+      <digest algorithm='sha384'>fc5205d0c064c2d11434e803904e922989388dc352634ac5d15bf0eaa4ceaf58be355e4bc7f96cf9e69dc29dc8df024e</digest>
+      <digest algorithm='sha512'>caecefefe9bd8d9540e6a2f47fd6c0cdcddf2d1c98b76c6d12b7b3c986a45919335136129d427d94b2966097411c4f5247b4fb63b26f3dfd9e49a6b95d146a47</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>20545569</size>
+      <blksize>32768</blksize>
+      <blocks>40136</blocks>
+      <modtime>2013-11-20 17:12:30+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749637</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>2</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:38:41+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:21+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749607</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/43F_O0223_SOCAdjusted_02-Apr-13.pdf</path>
+      <digest algorithm='md5'>0948daa636c102043381f4d246859f15</digest>
+      <digest algorithm='sha1'>9a0a839ec41f20594bfff12a3217da328fce2dd5</digest>
+      <digest algorithm='sha256'>1f8027ac9f9319a05a9055858f653458ec692c67f8481e91e508e27a81b40269</digest>
+      <digest algorithm='sha384'>dcd5e21ab7644d14a81e8d276c4dafdbd7e29d73909e65b95ab3bc8e676b105e5be2448a11f424a3e903419a3eb71f0a</digest>
+      <digest algorithm='sha512'>230199ebcd2ea7b64e5c912363095bdd242a777b695ee72fffe0ea04d2cf977315a496110d5056372f000061402f403c635360d07f81b532f50de6d34629e0a4</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>30440</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-19 16:11:50+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749640</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_C0040_07Sep11.pdf</path>
+      <digest algorithm='md5'>bf82e17b81a00173423137ea2e974e33</digest>
+      <digest algorithm='sha1'>309a220f9564f207d7d18b76a34c64856ff62560</digest>
+      <digest algorithm='sha256'>52125701249534e1e4fecd509fd09174336b0c8f7dd0628286d1325d490366b9</digest>
+      <digest algorithm='sha384'>ce04b069b8bdb31a72bf7b5e8e2bc1e3024b7a907077a93d5af54e06f599e2331f61a721305a8524f0998a94818e4e42</digest>
+      <digest algorithm='sha512'>6eed898433c9cdf947c1c0954663d1dfdfd2cf2baf9a42013d3bb93568b41cf78e44d5cd71c93f8763f063c804db6b241f7445c082ad8a1e05a32628d9e70869</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28432</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:12:00+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749641</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_C0040_09Mar13.pdf</path>
+      <digest algorithm='md5'>aaf75ad6c35516506ad05becd08122c4</digest>
+      <digest algorithm='sha1'>1d2926e0640b590eafd57d9bce9d5a67786a737a</digest>
+      <digest algorithm='sha256'>9b64f3ef32ce59d321faefc0ca5b7c2ce59567f985aee884c6a16cd71bbc21a2</digest>
+      <digest algorithm='sha384'>c7f85050a7c2ab5cc0719583090c245a329fa5b6304ba9f1b6cb6f65b5dab376d46bbe3b087dfd9499cad530b9d5e78e</digest>
+      <digest algorithm='sha512'>bee21406e313c78256ac5915cdfa3a2aaac9c596c1b32db5deee34ddf3458d55c75bba4ac63c86ed7f85df6dcd5a4a47901cbc91dc85a78f2680a40abb572d63</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29177</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-19 16:11:42+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749642</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_C0040_29Mar13.pdf</path>
+      <digest algorithm='md5'>e6d2f1efb30dce1be82a392a5277fb55</digest>
+      <digest algorithm='sha1'>7810f6594df7d82ffc25d0c09bf1f593e43b9a25</digest>
+      <digest algorithm='sha256'>1d3fa9a61a77eb15302cfa7b7ffc0324eb5481b846b34fc4bab99c2103ca247c</digest>
+      <digest algorithm='sha384'>3e1c142cb9148f2c779613b869dbef04e0b3ace0265dcd762b9972d28968747109c053548a47308ed9dc8241222bd780</digest>
+      <digest algorithm='sha512'>67c1958cd0ef55f601b67f336b0634e391f2ab11cd40d66f8158db105d2d152b75edb8572aa012b5ab85bd36f6ffae1bc4a7d29d4fe22d1133bfb320b2d509b4</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28399</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:37:44+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749643</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_P0040_01Sep11.pdf</path>
+      <digest algorithm='md5'>72bf788b59a9ff3442a2c6ba697793fe</digest>
+      <digest algorithm='sha1'>b1ef0c35776204df6acc7b4ee1f7658914d777e1</digest>
+      <digest algorithm='sha256'>ad42490841eaf8946d7b624f7abdd3a6d1135a827434121cad79231d5ef35d58</digest>
+      <digest algorithm='sha384'>dfd02cfbc8ca7424b3a0ff1a9c8cd1e231bf366176f16bf6d5cd917e6c400f4ee8d2af503b4a81751e617f053c63b5cb</digest>
+      <digest algorithm='sha512'>6717db1609df14b6198b0a1b29171cc504e50c96b4f58517dfbfc75a8bb57a011ebdff91caf946b87a09283f66ee270a8a543fa4c62ff4e746b69d0e8820a646</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26539</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:12:04+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749644</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_P0040_07Mar13.pdf</path>
+      <digest algorithm='md5'>473b22ceb892674a75653f152e9ed346</digest>
+      <digest algorithm='sha1'>8effb0deb4dce405993036476c5e35aaade7ebba</digest>
+      <digest algorithm='sha256'>6686543656c95224555fbf24147f65cc3fcb6aa5d60d7481175035ad2de9e6a3</digest>
+      <digest algorithm='sha384'>2f4348eb6430edf15dbde331ff6c29a594d1d2ce64995e38daa7047a067bbc49905239ff7fe29d1b5e6d16081a296352</digest>
+      <digest algorithm='sha512'>c47b3d5bd8c4957b684c510ea7aae4b836a35641964802b8469cb76ab45d8b14afbf65c7f6a36a4d3556805a65a6bc585f46e89f81b6cd75bb08fc1bf770696c</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26705</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:11:46+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749645</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_T0040_07Sep11.pdf</path>
+      <digest algorithm='md5'>2a7fafe5ead8afb1a9f574ef884408ec</digest>
+      <digest algorithm='sha1'>e75fc760f35acebd137470105ed19bc3a11235a6</digest>
+      <digest algorithm='sha256'>f913bff4bf5362163273cde14ae23c94d6f1f361d7438ce6d9f04432e0759b2f</digest>
+      <digest algorithm='sha384'>509d1d7c2262034021d988869fc8a8c8f1182a24b6e3d2d6be5223d65e5207f2620c9e004e048563ed510f6b83f735ae</digest>
+      <digest algorithm='sha512'>7a993de3c8df89400165834bb0628a473253a7406484031c3b8b53b1c9656ec10d49650f5f1a2fd1b34336d5319ed87ad0e9fe44b4ac6ca5bd250f67789ed580</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25567</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:12:22+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749646</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_T0040_09Mar13.pdf</path>
+      <digest algorithm='md5'>e675a956df291cb6a4e05ecfc2e55ced</digest>
+      <digest algorithm='sha1'>39b0627a1d33be7b72e6587cbb2f1bbae2418372</digest>
+      <digest algorithm='sha256'>28afd06232ce84421ae5c8309cc6e2225f50b1ec164988e9cc75c90e4c4a5537</digest>
+      <digest algorithm='sha384'>f13f54e317707523b249e3edccf63dc5fd9e53cf1ee5ff02514ba410309b6b3ab867e92a65fed4f1cef5ff5757ef6270</digest>
+      <digest algorithm='sha512'>bebb9a0e9eed94fa76aec22facff805d22db40329eaf6a3c99013b6818afb686c4ef58e063db1fc61594ce42190fffdf7600dfc89d186eb5dcac714442db19b4</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26204</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:11:38+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749647</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/Glider_Payload_CTD_T0040_29Mar13.pdf</path>
+      <digest algorithm='md5'>442e22c122619db7e227408f86a4c21d</digest>
+      <digest algorithm='sha1'>28804ffb3372af77e5412d9be974b734e355b4bc</digest>
+      <digest algorithm='sha256'>39b4b004e0e301031c78b5d9c5181744241e3e3cd1fc986491013330c8da8e66</digest>
+      <digest algorithm='sha384'>7b31896206584cb01d0f081322b49c3785f6c67ecc72f4facb3f41ca0e33fa9dd7e216777c16d098c8314d6a2cc1463c</digest>
+      <digest algorithm='sha512'>72326bcd51fb9fb78c2b1b7564d9c8d352f45385b8a78e9e64c87863205a3c45ec91d487aa02597e02987f70a6660c46cb40ded90dd13a0590927ba4865cea0e</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25568</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:37:40+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749648</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/SBE43F_O0223_13Sep11.pdf</path>
+      <digest algorithm='md5'>31d7d16fa383343ffa3f4bff25f022a7</digest>
+      <digest algorithm='sha1'>d46a9c1833bea63687aed4cfdbe768fb762f4f16</digest>
+      <digest algorithm='sha256'>3f6385f505461545e94893a28618dd6b5ff495487b325c4377592169eeedd41c</digest>
+      <digest algorithm='sha384'>a0cfc4067fa977d4022feeee74ee53444cf9750f3da38316caed090ccf4c045bbeb6c25da81cdaeea8c81943af655200</digest>
+      <digest algorithm='sha512'>090bfdc8f9f0e30e633764298d6b9e29220f58865d4b528040d14bdc9b78d63cf6aebbf0fd96d4db5a3a70f6526718aa7afe5a0cd4cc82c4a25017fb2d4b114d</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29745</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-19 16:11:34+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749649</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/gpctd0040_cal_docs/SBE43F_O0223_26Feb13.pdf</path>
+      <digest algorithm='md5'>c1dbf6392ad0ceee8d99de71173df23a</digest>
+      <digest algorithm='sha1'>1155e4057a077f7c6d44a52925fee1b0016d7cb6</digest>
+      <digest algorithm='sha256'>67acd5e66af4e4ccb3631115e1fef9788a5cb3631ff46c83ec1c88c49421aa15</digest>
+      <digest algorithm='sha384'>39f18a309c0b18ce6b196a31bd36ad2ffdf0d071ea5f672a8c6f9e99f930c4b29a1711479a12f1e48a2c1c9b6355052e</digest>
+      <digest algorithm='sha512'>7eeb1ad3d5a6afb2ac68ff3623680a203e3184144a4795c90c019451805def913a1d1e12d90341873f7897d995b17f371d54747fef6b9e84d45b6506e0e90eb2</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29737</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-13 17:37:28+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749650</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/moseg_fontaine.txt</path>
+      <digest algorithm='md5'>f940751e58afee5a9be0667c9de6536b</digest>
+      <digest algorithm='sha1'>caef994162f91916df95ea54ea32957120f4bc46</digest>
+      <digest algorithm='sha256'>acf6bbc2b58b07298d69e599bf06ce4654054fb61aab172650ef7f4fc2fdfc4b</digest>
+      <digest algorithm='sha384'>3841f1ba618ad56c328595a365469378e847f5e0bad48edef82b99470ec79e72bcd4a6af041bf955753d7df02a1e90a1</digest>
+      <digest algorithm='sha512'>760d98ed3b5d25692e09e35d9c84e1f097b7f0c4788a66810f40c469cbd2a51cc47455a1db5aca181f4dd35df587a5d8ea5b4c2a16251ec2be1bcf5128842559</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>524568</size>
+      <blksize>32768</blksize>
+      <blocks>1032</blocks>
+      <modtime>2013-11-20 17:12:30+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749638</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/fontaine_maru/weather_fontaine.txt</path>
+      <digest algorithm='md5'>5d6d8f197ab80512654b65b67d2b4bd2</digest>
+      <digest algorithm='sha1'>4e281db4cd3117c86c75bf3d4b5afa7065293460</digest>
+      <digest algorithm='sha256'>89fcf269ac8d05719ed2cc807a7aa0cc84c4371f55ef6db7e4726c2f22c06d62</digest>
+      <digest algorithm='sha384'>25e8b5c3d0506b7a32fd52f15caef0a81fca14bfa58f3e1d5b3e0183aa39e524113d436f719af1e1b4a855799c64d9b7</digest>
+      <digest algorithm='sha512'>b525a8259d9ff61907e54207c79e1c56e9021577e82a9fe4f21bd9aeff0fb1a6fc229412f62e7b1188f6d78d830f7d45220906d91d189cf7f5de21d98b39710c</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>2153347</size>
+      <blksize>32768</blksize>
+      <blocks>4208</blocks>
+      <modtime>2013-11-20 17:12:34+00</modtime>
+      <changetime>2013-12-04 11:17:12+00</changetime>
+      <acctime>2013-12-04 11:17:12+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749639</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/lvbabstract.txt</path>
+      <digest algorithm='md5'>115039c3ceea2743b0ba15b08a9ce11c</digest>
+      <digest algorithm='sha1'>4c338b40500d86a94dfee7d902f214ab29ffca6e</digest>
+      <digest algorithm='sha256'>ca38baaf30e3d0f3e361f3d28b17e8933eb224edac17e76b9a562eef4f6e9cb9</digest>
+      <digest algorithm='sha384'>7900086129d856ef6bd091126a7dbe78ffbd3538d82b3081c35bd20ccf018a4a555a695b4db6c11ba90824c9183ea158</digest>
+      <digest algorithm='sha512'>265183fc72115537a341e70ea5f74c6c7942b57886a90398ca2efe4f039a20e056fbc3a53956c3d209ed5580c648349f529b474f6d1b984ce824055ba7e80ae5</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>2833</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 12:10:23+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749616</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/lvbpurpose.txt</path>
+      <digest algorithm='md5'>131d425caad94f7b78d5691a3d39205b</digest>
+      <digest algorithm='sha1'>29b9b565daf4055531049df0a9e96a27b9d96d26</digest>
+      <digest algorithm='sha256'>07a427a95ea790598603b5ced0ed3e454b256f7b65eaceac02d53676f437c71a</digest>
+      <digest algorithm='sha384'>6daec5f3db963e2d0030bb4cc4a5178aa752f7ea454cb55a3887e16de703ccdbe84aa703c5644a87a18272b26578636a</digest>
+      <digest algorithm='sha512'>736a76a7fba53bb2c9616ae4ad9d932d1824f73ab627172819fa4f1c454aa2fae2181c0e97e1e174b2d967fa87414d36595ddfba3b6154a221a41a7ed13095e6</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>1034</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-27 11:57:46+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749617</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/pacx_airmar_calsheets.pdf</path>
+      <digest algorithm='md5'>ea165ba5be49149528a41033dccf62f2</digest>
+      <digest algorithm='sha1'>d9f109eb2e63afefee10c20a2400f0d6ea165b96</digest>
+      <digest algorithm='sha256'>24fc054e457c7d5f81a88a2da811c66a0288d686268b41b48f0e609eec0031d3</digest>
+      <digest algorithm='sha384'>c92b9db779e0a3b65cb700b157778bdf52dd3493fb9418a553b49f54ee10f1024e36325b78797eb3d5603c7eea893a09</digest>
+      <digest algorithm='sha512'>47b78136336340097ce596bb1d186289212e9ac537376b010466f033335230ba723615b1eb836258e886ce8b0497dcc30360cbd4de19c6aea9de61f2116d7458</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>90763</size>
+      <blksize>32768</blksize>
+      <blocks>184</blocks>
+      <modtime>2013-09-30 18:38:42+00</modtime>
+      <changetime>2013-12-04 11:17:11+00</changetime>
+      <acctime>2013-12-04 11:17:11+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749618</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:38:56+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:22+00</acctime>
+      <sumtime>2013-12-04 11:17:33+00</sumtime>
+      <inode>64749604</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/c3_papamau.txt</path>
+      <digest algorithm='md5'>fd9ed329867ddd82e62b8aa521b1c016</digest>
+      <digest algorithm='sha1'>e2d96469a129334e0b53f7b4cdd66e19d96eaaf0</digest>
+      <digest algorithm='sha256'>415bcf97e891dca4e9277d53eb5754891154b78ddaf93a05a0c50263aaa309b2</digest>
+      <digest algorithm='sha384'>4431764ae0bdf893a2932a3d19cefb307c79629ffc4ece6a2821e6da943ac25361a1b105dcb62584348b85ecf22cbe67</digest>
+      <digest algorithm='sha512'>df95ea4a91e99dda490319644cd48d732db57452468e10164c6c0d85053bd5f0ccce423abc8d93c334932f5740a57925d5dadbe024bd5ffc1dab740c3fb50dd3</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4275000</size>
+      <blksize>32768</blksize>
+      <blocks>8352</blocks>
+      <modtime>2013-11-20 17:11:42+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:34+00</sumtime>
+      <inode>64749651</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/ctddo_papamau.txt</path>
+      <digest algorithm='md5'>55ee5748a695d4daac57f5c842e27c5f</digest>
+      <digest algorithm='sha1'>18950870b1f9d546d88c011b8022f388f8c1699f</digest>
+      <digest algorithm='sha256'>57ebb07c2c210de3d770eabf04be1b9305cbd48966192349512242123506061a</digest>
+      <digest algorithm='sha384'>398f471524c85366c628c7620d3146f549dedbe5d32d55d111ff44fcb31dcdd7bb60fb4f9a47c49c5f9a67325a341256</digest>
+      <digest algorithm='sha512'>e5ff4e6b88103947237451687df0e6e2a4034f8df55f93986c4500e9e7c931f67e3c6bdd01e52eaf83911284f965547577931bcb5caf7ee0b3538fc28511d63c</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29023824</size>
+      <blksize>32768</blksize>
+      <blocks>56688</blocks>
+      <modtime>2013-11-20 17:11:54+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749652</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>2</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:40:51+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:22+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749608</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/43F0222_Post_cal.pdf</path>
+      <digest algorithm='md5'>a0c8b39f24f4cb85ff6f630afc5cebf1</digest>
+      <digest algorithm='sha1'>1288ee2ff24b7a737a48c717ac8095f258dd7abc</digest>
+      <digest algorithm='sha256'>ac00fafba3b032f5bc45da234fae0b91a917683e1eafe839d9c134de2c5e06bb</digest>
+      <digest algorithm='sha384'>cf768b1d79c44f0ad710003e39fe958a4774819d300118017391b2c3ff2b9a6ec595b75a70c92b852b74ae6aac424a86</digest>
+      <digest algorithm='sha512'>d59df9436797572984c0be58f277edd1b8eb1403d6f0fe31bac21c1b8b485ce002a1f88608d87da0b8e7a6ee3829fcedd4dd50fde550ff18b9ad88b891c059d5</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>31066</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-19 16:12:18+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749655</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_C0042_04Apr13.pdf</path>
+      <digest algorithm='md5'>93c2dc47ec32218320f7ce7a70301c26</digest>
+      <digest algorithm='sha1'>7963fd6a9c72eb062f1c69c6ba9d40e98e7686ad</digest>
+      <digest algorithm='sha256'>68893c0298b8565f259f8997735aa3883bf5a60c52991fab96a609063f3bcf7e</digest>
+      <digest algorithm='sha384'>798dd0918443994dd2a2b01b17232f2100a4754cb4db21f0157f448433e7f8b58468b9b13f1c26cf0bed0d09a0bd3a08</digest>
+      <digest algorithm='sha512'>e9e132a4e9be0d05de559928685bca847db0c3bffecbf93d3eba47696550678e28571e0fed72b14401e2909e6982ed1718b8c9529c9485d90448fd13fb6206e0</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28442</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:38:12+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749656</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_C0042_19Sep11.pdf</path>
+      <digest algorithm='md5'>63d2e6709e55fa77019cfa37bb2cee5d</digest>
+      <digest algorithm='sha1'>eef0a481ba27b7bfe38f39193c49b440b2b5f7f2</digest>
+      <digest algorithm='sha256'>83841ab41fd71479ffe69e1c241fdd66b3976777079162b89385e9df82530af9</digest>
+      <digest algorithm='sha384'>36fe0a4b858c9d6e6d1db87d640420f90df5e0b1927337249b7e39fc50906429a5d0021a18cf2436a02b95f0420dd9d6</digest>
+      <digest algorithm='sha512'>7c3ecc3d7c14b5fddb9d4b5d9223a59a980172368eb1d413f0fbd67ed2ed38dc5a852696a9fa9eec0dfdbe466e3648b3f46b2037ed62cb17c7320c9d26a208e9</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28435</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:11:32+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749657</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_C0042_30Mar13.pdf</path>
+      <digest algorithm='md5'>3bc6b13183372bf3a947b22adc6a7700</digest>
+      <digest algorithm='sha1'>951a4edbe8141f12ac5da58a0742775b07cd4561</digest>
+      <digest algorithm='sha256'>20df53294f8d97857f5ebd222d121a53de19bbea482700eb5ed68e6fcb0bdf7d</digest>
+      <digest algorithm='sha384'>870dbd2e656a887804c17004e58d573dd0aa12fb17887198442c4d75ba1875bad501255045240bc07c4209916f4baf24</digest>
+      <digest algorithm='sha512'>488a409f6a7cabc02ea64243ddf2065e2d5b7a8f86e45fe20f4ea29ccb48b5704833fc1321bf786bbb3f5e1a4338ffce6f141e88f9b39a47e4503cc93b21c579</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29160</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-19 16:12:06+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749658</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_P0042_14Sep11.pdf</path>
+      <digest algorithm='md5'>ea619dad99f7a264a5c25dcb52c3f62e</digest>
+      <digest algorithm='sha1'>fad92c4670b3ce62b82b90ec3afbc3f50cce54be</digest>
+      <digest algorithm='sha256'>d43e2e485bfc43f0c1c8404329086d584cf25c308428c5d9d920b6c259f22071</digest>
+      <digest algorithm='sha384'>4d79140c4bdd761d2b5ee37a27e3150e75e5148dfa7b9a11ed8084727d1b92631d5e08c86572c6f7924bc5fe951811b0</digest>
+      <digest algorithm='sha512'>7c86d25f87acddb16169441bcdbe467a5133f61575c1d7327075ca092b33cc8bec95d75bee489bb232f958768b851966bd5e77121dbb185eb1ffad2892b50f27</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26419</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:11:56+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749659</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_P0042_28Mar13.pdf</path>
+      <digest algorithm='md5'>43851e751795980164d0bfdcfd66d9e7</digest>
+      <digest algorithm='sha1'>94b561875d2635484bfe01186b635f431a37ecec</digest>
+      <digest algorithm='sha256'>a45f21d3b0a3d06efb83fb3ca80bbd57870186d27f366379ef5f524cac9bd8ea</digest>
+      <digest algorithm='sha384'>ba02c1383bfd61bc583a8fcb6769dea1774844b60b54ada037cf1c3977ab1fcfe2f697a76affe4ecc8f13c7ac7de56a1</digest>
+      <digest algorithm='sha512'>99bb6e97dfe9f0b91e4fae5fbbf566ba067d78abd9a4a4fb572c12ad4bad97f092ce4ac35b9f76ea0f222ec8d0f483586e6248d0b59121edf4e3a66eb86c1e1b</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26654</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:12:10+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749660</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_T0042_04Apr13.pdf</path>
+      <digest algorithm='md5'>a72c4d442cfb0781fcdc2ca4c0804d85</digest>
+      <digest algorithm='sha1'>dafaca724f13baf25633c3bddc8fece7d22625ea</digest>
+      <digest algorithm='sha256'>b606a8ab0c452f2e7f63fb8b7be5c3e3ed4191ee8249bd82686c75c75f04966f</digest>
+      <digest algorithm='sha384'>0d4c124d3c0ca5d374d52a1f38131e356aa8d0e8f47a4496ed73d344218b0e2f65727ca3391e11cba28b2479da6c71a0</digest>
+      <digest algorithm='sha512'>ffb5bcdb4019752d9ffd85bad11e6edbee9b1795615dd7e8123b7a349b92c419f81d0ef51bf96903e64e793c3ed132fe65c1877a195e97f422533b5ec52c4aed</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25563</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-13 17:38:08+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749661</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_T0042_19Sep11.pdf</path>
+      <digest algorithm='md5'>6efecd020ea01eda021681e105c9fc70</digest>
+      <digest algorithm='sha1'>02c2141324fe656d9217a420ddeb99d9231430ff</digest>
+      <digest algorithm='sha256'>c9383ace7570eb611035923409ac0c2dd3f87b2324352605b13a2d47bd004540</digest>
+      <digest algorithm='sha384'>08c5b63ae897b31d2fef7203574c3bc53e1c09d27c84dcb3b5c14da1ce3476c1a610ca42dce417dd7bbbdc36a6ead449</digest>
+      <digest algorithm='sha512'>437276e0be94291ed357c4f176c6163cc77b17110f6594bfd7235dac18fe02e867f453b8cc707a8cf0042ded2804f7ee885aa74d5c2068922f7f7da405278d6a</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25509</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:11:54+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749662</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/Glider_Payload_CTD_T0042_30Mar13.pdf</path>
+      <digest algorithm='md5'>3da65f9c06cb6cc4c60a710a458b25d1</digest>
+      <digest algorithm='sha1'>09f7b3c20de678e659412747c26fb81ae1ee409b</digest>
+      <digest algorithm='sha256'>c942d16f479ae256ac75aa6be2b0d2840cd19cb977aca452cbba5ac17930dd46</digest>
+      <digest algorithm='sha384'>6b497e9d79a4f207b72a2379427d700f8a19d0af30077c9b7baf46fda83166c8441577b4dae6b5ce36d3d90fdee04a13</digest>
+      <digest algorithm='sha512'>503b62d32dbd5ae7d832f303f3fce794c93a8f2794017588717fe5b2a1f5bfdcfa7835777e80c2cdf3161bf5708378cea10f53640ae07265359b5d1820bbf551</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26126</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-19 16:12:14+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749663</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/gpctd0042_cal_docs/SBE43F_O0222_29Mar13.pdf</path>
+      <digest algorithm='md5'>269e7e189fa66777b5c0f81f4d42ce50</digest>
+      <digest algorithm='sha1'>b06d5a8287362ae005f6547386b3e89272801c44</digest>
+      <digest algorithm='sha256'>e051e1ca47810e0694c5f47005579443a569ae338ce393ca577cd1b938a2ba29</digest>
+      <digest algorithm='sha384'>90487f075658dcdea06ad6a78673b872408d351d5f594ade9d794f5f325dd4bda2d3b20da54cac3a48ba2017a9992647</digest>
+      <digest algorithm='sha512'>83ae54d35cabecbcc7b0745b169227a68c4bc12669f583b185c14e516ca565f511ade658195cf6a8baafa9fa3ca8ebafca6b10d94c349907bc670bef42298e05</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29796</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-13 17:37:32+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749664</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/moseg_papamau.txt</path>
+      <digest algorithm='md5'>679ac5625927b109c6037bdfb96f8518</digest>
+      <digest algorithm='sha1'>7257481fa2d866306518d9704702e34adc29a4c9</digest>
+      <digest algorithm='sha256'>d5331d87b38e94fefeb449f0668f14d56f897b0ba4bd2b3ecafd6bfa1d439cef</digest>
+      <digest algorithm='sha384'>e693798bf5cbfd5085a0899caebfa772ad8ab0984c0ca877f9787b77ca1ed56dc4e0fad7735a9e02f7d7b66a676f2d37</digest>
+      <digest algorithm='sha512'>453ca8a06fe8eea2ca8879b2513f986440a86347e8e668d4a7b4e8b8ec9f189970447e967fbbcc154696d623f01189ce4703872dddce47044b84fc05cc540b19</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>724082</size>
+      <blksize>32768</blksize>
+      <blocks>1416</blocks>
+      <modtime>2013-11-20 17:11:52+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749653</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/papa_mau/weather_papamau.txt</path>
+      <digest algorithm='md5'>96b8e8d2ab58b715484aa1d77838f859</digest>
+      <digest algorithm='sha1'>ae2c6248ea7f35195afd76dc4313c1855810073e</digest>
+      <digest algorithm='sha256'>5c71361501a51c393a1ac9eb44d8838cf7f8a5e1eb453908818c98ce619b8243</digest>
+      <digest algorithm='sha384'>23ed2e0b315823cc070789eafdc1c0884fe1ad4c2d016a39936f53e0ffb90d58469976d77857b351487df59d8782764e</digest>
+      <digest algorithm='sha512'>ee4e182d8f97a3621f363116b7b3fec790ae81c2ea316d5f17740929f007803996df9e3ab818f2aeb232eeb95360675bda4f68f4c71e5b2c84507a6431491acf</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>2221742</size>
+      <blksize>32768</blksize>
+      <blocks>4344</blocks>
+      <modtime>2013-11-20 17:11:56+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749654</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>3</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:41:00+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:23+00</acctime>
+      <sumtime>2013-12-04 11:17:36+00</sumtime>
+      <inode>64749605</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/c3_piccard.txt</path>
+      <digest algorithm='md5'>ad304e4a29884ec3a9a48cb35e64d683</digest>
+      <digest algorithm='sha1'>1d36b222e682db2afada066e1767916dd076d055</digest>
+      <digest algorithm='sha256'>bf77cb53d9f3951c7e301b95b1e715dae6650881044d60cff3e9192ad248230e</digest>
+      <digest algorithm='sha384'>6ba9a23024d527e998f9c1287fcf1c705643b6acef4ae7d221e7e893c868dbf9e9e53ceee33d3768842feb0d957ff882</digest>
+      <digest algorithm='sha512'>df0880a47ce2778220ef3f9942e071ffbdfcbab26945aaa34ce667aac4fceb593171d646c21cd654188f592ef470d143e9d335099184b6840fcde605a528a993</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4066011</size>
+      <blksize>32768</blksize>
+      <blocks>7944</blocks>
+      <modtime>2013-11-20 17:13:06+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:37+00</sumtime>
+      <inode>64749665</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/ctddo_piccard.txt</path>
+      <digest algorithm='md5'>dbf2767d03258fa422ee0870c9db54a4</digest>
+      <digest algorithm='sha1'>500f3b86d3866f8afb91f779e977a072ac25b0a7</digest>
+      <digest algorithm='sha256'>9de428fc885691e50fcd6a66d1b4f7d43af88a76bb7167991ac145fa4bede179</digest>
+      <digest algorithm='sha384'>cd4aa499d877d753123a690c6e0743529a53e72342062906754f6a76612c9f75f94fa832e841c3cc07b8fe213eaef62d</digest>
+      <digest algorithm='sha512'>49cbb05596dcfdab97f71ee6361959e7795c05d150a55a3ab518faed205b48965ecd39ce39183ea8ce9c4363854dbee20ce935b661076797be099b8cbd743f99</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>27770142</size>
+      <blksize>32768</blksize>
+      <blocks>54240</blocks>
+      <modtime>2013-11-20 17:13:20+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749666</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/gpctd0039_cal_docs</path>
+      <digest algorithm='md5'>d41d8cd98f00b204e9800998ecf8427e</digest>
+      <digest algorithm='sha1'>da39a3ee5e6b4b0d3255bfef95601890afd80709</digest>
+      <digest algorithm='sha256'>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</digest>
+      <digest algorithm='sha384'>38b060a751ac96384cd9327eb1b1e36a21fdb71114be07434c0cc7bf63f6e1da274edebfe76f65fbd51ad2f14898b95b</digest>
+      <digest algorithm='sha512'>cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e</digest>
+      <type_category>irregular</type_category>
+      <type>directory</type>
+      <permissions>drwxrwxr-x</permissions>
+      <linkcount>2</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>4096</size>
+      <blksize>32768</blksize>
+      <blocks>8</blocks>
+      <modtime>2013-11-20 17:41:44+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:23+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749609</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/gpctd0039_cal_docs/Glider_Payload_CTD_C0039_07Sep11.pdf</path>
+      <digest algorithm='md5'>fa29e77d639c1cb047a31c66ea08567d</digest>
+      <digest algorithm='sha1'>b34c1c430dfe5b9168d68707eed9eb9314ace741</digest>
+      <digest algorithm='sha256'>d35e920cd453e6617379591c76961d4b667ebdab8b0e4ed169aafa5787511aac</digest>
+      <digest algorithm='sha384'>9aac479f64cdad073908b9d8a0e0b393318e0fd5d8b0247f74d53173f1af9a38b85b5153806801ffa9b766487352a403</digest>
+      <digest algorithm='sha512'>fcdf79a6cc68f8d359b46ac7145b1d47292e9869842b89def387a6b5b63a8d3122e8b54c81392e758ff02a4df009316f241e0bafa2d69afbb184572ea90ee831</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>28455</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-14 15:27:24+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749669</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/gpctd0039_cal_docs/Glider_Payload_CTD_P0039_12Sep11.pdf</path>
+      <digest algorithm='md5'>03ce2f3dbc307dd4bd5d8e07c8500daf</digest>
+      <digest algorithm='sha1'>d6fd03741d5e0b7b11ee4d7ba421e062d75e7727</digest>
+      <digest algorithm='sha256'>7302d9e95f9e2fbb1c039240fff194873fbced777101bdb1df0279194b43c972</digest>
+      <digest algorithm='sha384'>0e510d58bdfe697e4d5f953bd10f7ba04d2275c0367e4932cec122645fad1c0d53d6d86f44f0da9928cf7c60ad4e749c</digest>
+      <digest algorithm='sha512'>6937c0839df817af9d451f2fda969752aa8413dd00aabc42184ff79bf226825c5b7838c90bc6a4d365f1d0b84ef79dfa44d5322266c97d011a21c44a32fcf51d</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>26615</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-14 15:27:28+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749670</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/gpctd0039_cal_docs/Glider_Payload_CTD_T0039_07Sep11.pdf</path>
+      <digest algorithm='md5'>60eba86d41a60e9a95a355b95f065cd2</digest>
+      <digest algorithm='sha1'>4ed6f520209e002225f2c8e9f47c0aa7db9bb97e</digest>
+      <digest algorithm='sha256'>d7dee1c97c79da46a5ac0f7c44c1be22ed46c1825e0c0f1cd5a1fcb1af4ede36</digest>
+      <digest algorithm='sha384'>d757d2ae46758362598dffde34d0009d0a2e15c90acf3d66fa8e4f94d8b3840771501781f78d662b5df656edbf4c952a</digest>
+      <digest algorithm='sha512'>d357fae2566864c46c241717d65489c11e0be030c95a6a40ce5378785652798568b7253eb107e94c5352f33daf536e8dc0df7006665539945298e2c5757378ce</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>25585</size>
+      <blksize>32768</blksize>
+      <blocks>56</blocks>
+      <modtime>2013-08-14 15:27:22+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749671</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/gpctd0039_cal_docs/SBE43F_O0220_01Sep11.pdf</path>
+      <digest algorithm='md5'>b94be20fcaeec502db41dd0e199ba5ec</digest>
+      <digest algorithm='sha1'>674fb99ee4c5d04c9743574c484a69c506748e4e</digest>
+      <digest algorithm='sha256'>0bb3a764e2b18efe572e4649490fc1593453ee5078864017512c91298f08db81</digest>
+      <digest algorithm='sha384'>4c484d2165bc507bab3b0cfcc0867fd481ef40e9532a76e7c33d52f8bff1dd49fff7ed21cf509e29446d7fe2afa7e7b8</digest>
+      <digest algorithm='sha512'>f1d86cefe7fb88fcfb508f02d6cce6534fff2ac70fda263a939f7f2975d3bfc92285c8fae415c494b82b7cf9a88724aade2faeadb856eb80b78be3c1bfdec62e</digest>
+      <type_category>regular</type_category>
+      <type>binary</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>29723</size>
+      <blksize>32768</blksize>
+      <blocks>64</blocks>
+      <modtime>2013-08-14 15:27:30+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749672</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/moseg_piccard.txt</path>
+      <digest algorithm='md5'>df309d3f38df31fb4c156c669406f0b3</digest>
+      <digest algorithm='sha1'>8db4c45131e48ac43a56d53602a89e36cf17c226</digest>
+      <digest algorithm='sha256'>87b80bf7d81566c506c28df50620080ae3fbd850b380c2ba0cce8d82965b087a</digest>
+      <digest algorithm='sha384'>2be0ae395a2d56c83393dc9b734af24ef97d94d7218f2c4d1f097ee3ab479fb80163cb9787f91d917ea07fe714d993e7</digest>
+      <digest algorithm='sha512'>18ba60fd90613bde758f8fdf03b2c9c7f695658777e381959c081479837a710dfdaa26760c10826db01fda7a226ebfb681afd629e910a094005ca85ccc264d40</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>803159</size>
+      <blksize>32768</blksize>
+      <blocks>1576</blocks>
+      <modtime>2013-11-20 17:13:20+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749667</inode>
+    </file>
+    <file>
+      <path>data/0-data/PacX_NODC_master_folder/piccard_maru/weather_piccard.txt</path>
+      <digest algorithm='md5'>5394fc4174d4eb5ec5dfe1a22ae6f20e</digest>
+      <digest algorithm='sha1'>b8650a5f765d040880c801ac7fae31c9ccf1e1d3</digest>
+      <digest algorithm='sha256'>38b8fe30bd22f32c7d481f6971b8988f566dc3ed8d8648010b3b374f78087987</digest>
+      <digest algorithm='sha384'>374101c667e6834363731b21879b943999cb9a0010ab98092b515c0c9abc3fdd66a1536259fd55905d6109bc5beeb323</digest>
+      <digest algorithm='sha512'>0c15c7e8f913889ac082b05cac1458c6bd03f2c15691549e5461100115e590bfdd979dc64fbaa739c634af5655b25e9c69fa73c14cb797766dd3a15c0c27d704</digest>
+      <type_category>regular</type_category>
+      <type>text</type>
+      <permissions>-rwxrwxr-x</permissions>
+      <linkcount>1</linkcount>
+      <user>root</user>
+      <group>root</group>
+      <size>3015070</size>
+      <blksize>32768</blksize>
+      <blocks>5896</blocks>
+      <modtime>2013-11-20 17:13:22+00</modtime>
+      <changetime>2013-12-04 11:17:13+00</changetime>
+      <acctime>2013-12-04 11:17:13+00</acctime>
+      <sumtime>2013-12-04 11:17:39+00</sumtime>
+      <inode>64749668</inode>
+    </file>
+  </files>
+</accession>

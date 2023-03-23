@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+WAVE GLIDER PAPA MAU CARRIED THE FOLLOWING INSTUMENTS 
+
+INSTRUMENT                       SERIAL NUMBER               CALIBRATION DATE                   CALIBRATED BY                 NOTES
+Airmar PB200                     2265416                     NA	                                NA                            INSTRUMENT FAILED ON DATE?
+Airmar PB200                     2250048                     NA                                 NA                            REPLACED INSTRUMENT 2265416
+
+Turner Designs C3                0315                        September 28, 2011(pre-mission)    Luke Beatman
+Turner Designs C3                0315                        February 18, 2013(post-mission)    Ruth Ann Kreider
+
+Datawell MOSE-G                     
+
+SeaBird Electronics GPCTD        0042                        September, 2011
+SeaBird Electronics GPCTD        0042                        April, 2013
+
+SeaBird Electronics SBE43F       0222                        
+SeaBird Electronics SBE43F       0222
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+WAVE GLIDER BENJAMIN CARRIED THE FOLLOWING INSTRUMENTS 
+
+INSTRUMENT                       SERIAL NUMBER               CALIBRATION DATE                   CALIBRATED BY                 NOTES 
+Airmar PB200                     2250051                     NA	                                NA   
+
+
+Turner Designs C3                0241                        September 28, 2011(pre-mission)    Luke Beatman
+Turner Designs C3                0241                        March 22, 2013(post-mission)       Ruth Ann Kreider
+
+Datawell MOSE-G                     
+
+SeaBird Electronics GPCTD        0041                        November, 2011                     SEABIRD ELECTRONICS
+SeaBird Electronics GPCTD        0041                        
+
+SeaBird Electronics SBE43F       0215                        September, 2011
+SeaBird Electronics SBE43F       0215
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+WAVE GLIDER PICCARD MARU CARRIED THE FOLLOWING INSTRUMENTS 
+
+INSTRUMENT                       SERIAL NUMBER               CALIBRATION DATE                   CALIBRATED BY
+Airmar PB200                     2265420                     NA	                                NA   
+
+
+Turner Designs C3                0230                        September 28, 2011(pre-mission)    Luke Beatman
+Turner Designs C3                0230                        NA(post-mission)                   NA   
+
+Datawell MOSE-G                     
+
+SeaBird Electronics GPCTD        0039                        November, 2011(pre-mission)        SEABIRD ELECTRONICS 
+SeaBird Electronics GPCTD        0039                        NA(post-mission)                   NA
+
+SeaBird Electronics SBE43F       0220                        September, 2011                    SEABIRD ELECTRONICS
+SeaBird Electronics SBE43F       0220                        NA(post-mission)                   NA
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+WAVE GLIDER FONTAINE MARU CARRIED THE FOLLOWING INSTRUMENTS 
+
+INSTRUMENT                       SERIAL NUMBER               CALIBRATION DATE                   CALIBRATED BY
+Airmar PB200                     2265415                     NA	                                NA   
+
+
+Turner Designs C3                0316                        September 28, 2011(pre-mission)    Luke Beatman
+Turner Designs C3                0316                        NA(post-mission)                   NA   
+
+Datawell MOSE-G                     
+
+SeaBird Electronics GPCTD        0040                        September, 2011(pre-mission)       SEABIRD ELECTRONICS 
+SeaBird Electronics GPCTD        0040                        March, 2013                        NA
+
+SeaBird Electronics SBE43F       0223                        September, 2011                    SEABIRD ELECTRONICS
+SeaBird Electronics SBE43F       0223                        February, 2013                     NA                    
+
+
+
+
+
+
+
+
+
+
+
+ 
