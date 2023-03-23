@@ -409,7 +409,7 @@ class Storm_tracking:
         plt.clf() # clear figure
     
     def run_all(self):
-        for i in range(39,len(self.storms)):
+        for i in range(len(self.storms)):
             self._simulate_swarm_in_storm(i)
 
 
