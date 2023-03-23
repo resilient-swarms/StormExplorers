@@ -32,8 +32,8 @@ Useful commands:
 
 Compile ASVLite Python wrapper. 
 ``` 
-git clone --recurse-submodules https://github.com/resilient-swarms/storm_tracking.git
-cd storm_tracking/dependency/ASVLite/wrapper/cython
+git clone --recurse-submodules https://github.com/resilient-swarms/StormExplorers.git
+cd StormExplorers/dependency/ASVLite/wrapper/cython
 python setup.py build_ext -i
 ```
 
