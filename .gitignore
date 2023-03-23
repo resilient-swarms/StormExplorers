@@ -1,0 +1,54 @@
+# System files
+# ------------
+.directory
+
+# VS Code config dir
+# ------------------
+.vscode
+
+# Vim config files
+# ----------------
+.ycm_extra_conf.py
+
+# Ignore tags
+# -----------
+tags
+
+# build directory
+# ---------------
+build
+
+# qmake user config
+# -----------------
+*.pro.user
+.qmake.stash
+
+# Jupyter notebook checkpoints
+# ----------------------------
+.ipynb_checkpoints
+
+# Python cache
+# ------------
+__pycache__
+
+# Wrapper binaries
+dependency/ASVLite/wrapper/lib
+
+# Python env
+# ----------
+.env
+env
+
+# Ignore NetCDF files
+# -------------------
+*.nc
+
+# Ignore the results
+# ------------------
+results
+model
+
+# Ignore cython generated files
+# -----------------------------
+source/*.c 
+source/*.so 
