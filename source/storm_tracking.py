@@ -30,7 +30,11 @@ _MPS_TO_KNOTS = 1.94384449 # 1 m/s = 1.94384449 knots
 _SIMULATION_TIME_STEP_SIZE = 40 # milli-sec
 
 class Storm_tracking:
-    def __init__(self) -> None:
+    def __init__(self, host_type) -> None:
+        '''
+        Valid values for host_type are the strings - "PC", "HPC"
+        '''
+        self.host_type = host_type
         # Map boundary
         self.map_boundary_south = 15
         self.map_boundary_north = 50
@@ -99,7 +103,7 @@ class Storm_tracking:
                 else:
                     self.storms = pd.concat([self.storms, df_storms.loc[i].to_frame().T], ignore_index=True)
        
-    def _simulate_wg(self, start_position, start_time, end_time, storm, output_file, pbar, return_dict):
+    def _simulate_wg(self, start_position, start_time, end_time, storm, output_file, progress_bar, return_dict):
         is_simulation_complete = False
         f = open(output_file, "w")  
         f.write("time_stamp,longitude,latitude,z,wg_heading,hs(m),dist(km)\n")   
@@ -192,10 +196,12 @@ class Storm_tracking:
                                                         hs=current_hs,
                                                         dist=distance_to_storm))
             # Update progress bar
-            pbar.update(1)
+            if progress_bar is not None:
+                progress_bar.update(1)
         is_simulation_complete = True
         msg = None
-        pbar.close()
+        if progress_bar in not None:
+            progress_bar.close()
         f.close()
         return_dict[wg_name] = (is_simulation_complete, msg) 
     
@@ -266,9 +272,16 @@ class Storm_tracking:
             # Create the processes
             for j in range(self.swarm_size):
                 count_simulation_steps = ((simulation_end_time - simulation_start_time).total_seconds()*1000)/_SIMULATION_TIME_STEP_SIZE
-                progress_bar = tqdm(leave=False, total=count_simulation_steps, ncols=120)
-                progress_bar.set_description("wg{}".format(j))
-                progress_bars.append(progress_bar)
+                progress_bar = None 
+                if self.host_type == "PC":
+                    progress_bar = tqdm(leave=False, total=count_simulation_steps, ncols=120)
+                    progress_bar.set_description("wg{}".format(j))
+                    progress_bars.append(progress_bar)
+                elif self.host_type == "HPC":
+                    # Don't set the tqdm bars if running on a cluster.
+                    progress_bar = None 
+                else:
+                    raise ValueError("Incorrect value for the variable host_type.")
                 # Output file for wave glider
                 wg_output_file = deployment_dir.joinpath("wg{}".format(j))
                 # Start position 
@@ -309,7 +322,7 @@ class Storm_tracking:
     
     def _compute_deployment_performance(self, storm_index, start_time_index, end_time_index, deployment_dir):
         df = pd.DataFrame()
-        for i in tqdm(range(self.swarm_size), desc="Computing performance", leave=False, ncols=120):
+        for i in range(self.swarm_size):
             wg_output_file = deployment_dir.joinpath("wg{}".format(i))
             if os.path.exists(wg_output_file):
                 df_wg = pd.read_csv(wg_output_file)
@@ -375,7 +388,7 @@ class Storm_tracking:
         longitudes = [position[0] for position in positions]
         latitudes  = [position[1] for position in positions]
         # Plot wave glider path
-        for i in tqdm(range(self.swarm_size), desc="Ploting wg paths", leave=False, ncols=120):
+        for i in range(self.swarm_size):
             wg_output_file = deployment_dir.joinpath("wg{}".format(i))
             if os.path.exists(wg_output_file):
                 df = pd.read_csv(wg_output_file) 
@@ -414,5 +427,5 @@ class Storm_tracking:
 
 
 if __name__ == '__main__':   
-    storm_tracking = Storm_tracking()
+    storm_tracking = Storm_tracking("HPC")
     storm_tracking.run_all()
