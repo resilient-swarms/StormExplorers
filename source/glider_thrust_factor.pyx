@@ -56,7 +56,11 @@ def get_thrust_tuning_factor(wave_ht, zonal_current_velocity, meridional_current
 _nc_data_wave = {} 
 _nc_data_current = {}
 class _Thrust_tuning:
-    def __init__(self):
+    def __init__(self, host_type):
+        '''
+        Valid values for host_type are the strings - "PC", "HPC"
+        '''
+        self.host_type = host_type
         self.geodesic = pyproj.Geod(ellps='WGS84') # Initialise it once here. Used in __get_heading().
         self.proximity_margin = 20.0 # m
         # Files and directories
@@ -388,8 +392,14 @@ class _Thrust_tuning:
             tuning_factor = None # Will be set in run() since update_tuning_for_sea_state = True
             params = [(i, self.proximity_margin, update_tuning_for_sea_state, tuning_factor) for i in rows]
             jobs = [executor.submit(self.run, param) for param in params] # Parameters to be passed to method run()
-            jobs = tqdm(as_completed(jobs), total=len(jobs)) # Get a progress bar.
-            jobs.set_description("{} {}".format(year, str(month).zfill(2)))
+            if self.host_type == "HPC":
+                jobs = as_completed(jobs)
+            elif self.host_type == "PC":
+                # Running on a personal computer, show tqdm progress bar
+                jobs = tqdm(as_completed(jobs), total=len(jobs)) # Get a progress bar.
+                jobs.set_description("{} {}".format(year, str(month).zfill(2)))
+            else:
+                raise ValueError("Incorrect value for the variable host_type.")
             for job in jobs:
                 results.append(job.result())
         for result in results:
@@ -484,7 +494,15 @@ class _Thrust_tuning:
             recursion_depth = 0
             params = [(i, tuning_factor, recursion_depth) for i in month_group.index]
             jobs = [executor.submit(self._tune_instance, param) for param in params] # Parameters to be passed to method run()
-            for job in tqdm(as_completed(jobs), total=len(jobs)):
+            if self.host_type == "HPC":
+                jobs = as_completed(jobs)
+            elif self.host_type == "PC":
+                # Running on a personal computer, show tqdm progress bar
+                jobs = tqdm(as_completed(jobs), total=len(jobs)) # Get a progress bar.
+                jobs.set_description("{} {}".format(year, str(month).zfill(2)))
+            else:
+                raise ValueError("Incorrect value for the variable host_type.")
+            for job in jobs:
                 is_simulation_complete, i, end_time, simulated_speed, tuning_factor, error_msg = job.result()
                 self.df.loc[i, "delta_T_simulated(s)"] = (end_time - self.df.loc[i, "Timestamp(UTC)"]).total_seconds() if is_simulation_complete else end_time
                 self.df.loc[i, "tuning_factor"] = tuning_factor   

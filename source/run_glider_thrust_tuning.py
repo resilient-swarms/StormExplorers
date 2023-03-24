@@ -6,6 +6,7 @@ model_dir = root_dir.joinpath("model")
 asvlite_wrapper_dir = root_dir.joinpath("dependency", "ASVLite", "wrapper", "cython")
 sys.path.insert(0, str(asvlite_wrapper_dir))
 
+import math
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_squared_error, r2_score
@@ -15,10 +16,10 @@ from xgboost import XGBRegressor
 from autosklearn.regression import AutoSklearnRegressor
 from joblib import dump
 
-from glider_thrust_factor import _Thrust_tuning
+import glider_thrust_factor
 
 # Tune thrust
-tuning = _Thrust_tuning()
+tuning = glider_thrust_factor._Thrust_tuning()
 tuning.tune_wg_thrust()
 
 # Create the models
@@ -79,20 +80,26 @@ model_6 = LinearRegression().fit(X_train, y_train)
 
 # Save models to file
 file_name = model_dir.joinpath("thrust_tuning_lin_reg_1.joblib")
+print("saving {}".format(file_name))
 dump(model_1, str(file_name))
 file_name = model_dir.joinpath("thrust_tuning_lin_reg_2.joblib")
+print("saving {}".format(file_name))
 dump(model_2, str(file_name))
 file_name = model_dir.joinpath("thrust_tuning_xgboost.joblib")
+print("saving {}".format(file_name))
 dump(model_3, str(file_name))
 file_name = model_dir.joinpath("thrust_tuning_automl.joblib")
+print("saving {}".format(file_name))
 dump(model_4, str(file_name))
 file_name = model_dir.joinpath("thrust_tuning_lin_reg_3.joblib")
+print("saving {}".format(file_name))
 dump(model_5, str(file_name))
 file_name = model_dir.joinpath("thrust_tuning_lin_reg_4.joblib")
+print("saving {}".format(file_name))
 dump(model_6, str(file_name))
 
 # Reload the glider_thrust_factor module and generate results for Benjamin
 import importlib
 importlib.reload(glider_thrust_factor)
-tuning = glider_thrust_factor._Thrust_tuning()
+tuning = glider_thrust_factor._Thrust_tuning("HPC")
 tuning.run_benjamin()
