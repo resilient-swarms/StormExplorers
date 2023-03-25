@@ -200,7 +200,7 @@ class Storm_tracking:
                 progress_bar.update(1)
         is_simulation_complete = True
         msg = None
-        if progress_bar in not None:
+        if progress_bar is not None:
             progress_bar.close()
         f.close()
         return_dict[wg_name] = (is_simulation_complete, msg) 
@@ -422,8 +422,20 @@ class Storm_tracking:
         plt.clf() # clear figure
     
     def run_all(self):
-        for i in range(len(self.storms)):
-            self._simulate_swarm_in_storm(i)
+        count_storms_executed_in_parallel = math.ceil(mp.cpu_count() / self.swarm_size)
+        i = 0
+        while i < len(self.storms):
+            processes = [] 
+            for j in range(count_storms_executed_in_parallel):
+                process = mp.Process(target=self._simulate_swarm_in_storm, args=[i])
+                i += 1
+                processes.append(process)
+            # Start simulation of each storm
+            for process in processes:
+                process.start()
+            # Close the processes
+            for process in processes:
+                process.join()
 
 
 if __name__ == '__main__':   
