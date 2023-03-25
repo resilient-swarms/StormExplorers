@@ -42,6 +42,7 @@ env
 # Ignore NetCDF files
 # -------------------
 *.nc
+data/cds
 
 # Ignore the results
 # ------------------
