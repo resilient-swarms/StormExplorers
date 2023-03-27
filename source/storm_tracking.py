@@ -8,12 +8,15 @@ sys.path.insert(0, str(asvlite_wrapper_dir))
 import os
 import math
 import pandas as pd
+import numpy as np
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 import multiprocessing as mp
 from datetime import datetime, timedelta
 from shapely.geometry import Polygon, LineString, Point
 from tqdm import tqdm
+from sklearn.cluster import KMeans
 
 import epsg
 import cds
@@ -50,26 +53,29 @@ class Storm_tracking:
         self.deployment_region = Polygon([(x0, y0), (x1, y0), (x1, y1), (x0, y1)])
         # Deployment configuration
         self.swarm_size = 9
+        self.deployment_names = []
         self.deployments = [] # array of array of Points.
         diagonal_NW_SE_geom = LineString([(x0, y1), (x1, y0)]) 
         diagonal_SW_NE_geom = LineString([(x0, y0), (x1, y1)]) 
         diagonal_length = diagonal_NW_SE_geom.length   # m
         swarm_spacing = diagonal_length/(self.swarm_size+1) # m
-        # Config 1
+        # Config 0
         NW_SE_deployment = []
         for i in range(1, self.swarm_size+1):
             dist = i*swarm_spacing
             p = diagonal_NW_SE_geom.interpolate(dist, normalized=False)
             NW_SE_deployment.append(p)
+        self.deployment_names.append("NW-SE")
         self.deployments.append(NW_SE_deployment)
-        # Config 2
+        # Config 1
         SW_NE_deployment = []
         for i in range(1, self.swarm_size+1):
             dist = i*swarm_spacing
             p = diagonal_SW_NE_geom.interpolate(dist, normalized=False)
             SW_NE_deployment.append(p)
+        self.deployment_names.append("SW-NE")
         self.deployments.append(SW_NE_deployment)
-        # Config 3
+        # Config 2
         p0 = SW_NE_deployment[0]
         p1 = NW_SE_deployment[-1]
         p2 = SW_NE_deployment[-1]
@@ -80,6 +86,7 @@ class Storm_tracking:
         p12 = Point((p1.x+p2.x)/2, (p1.y+p2.y)/2)
         p_c = Point((p03.x+p12.x)/2, (p03.y+p12.y)/2)
         square_deployment= [p0, p01, p1, p03, p_c, p12, p3, p23, p2]
+        self.deployment_names.append("SQU")
         self.deployments.append(square_deployment)
         # Set the list of storms that pass through the deployment region
         self._set_storms()
@@ -437,7 +444,89 @@ class Storm_tracking:
             for process in processes:
                 process.join()
 
+    def compute_performance(self):
+        df = pd.DataFrame(columns=["storm_name", "year", "config", "min_dist(km)", "normalised_min_dist", "avg_dist(km)", "normalised_avg_dist"])
+        results_dir = root_dir.joinpath("results", "north_atlantic_deployments")
+        summary_plot = results_dir.joinpath("summary.png")
+        # Compute min distance and avg distance
+        for storm_index in range(len(self.storms)):
+            storm_name = self.storms.loc[storm_index, "storm_name"]
+            storm_year = self.storms.loc[storm_index, "year"]
+            storm_dir = results_dir.joinpath("{}_{}".format(int(storm_year), storm_name))
+            for i in range(3):
+                config_dir = storm_dir.joinpath("config_{}".format(i))
+                file_name = config_dir.joinpath("performance.csv")
+                peformance_df = None
+                try:
+                    peformance_df = pd.read_csv(str(file_name))
+                    min_dist = peformance_df["min_dist(km)"].min()
+                    avg_dist = peformance_df["min_dist(km)"].mean()
+                    # Update df
+                    new_row = pd.DataFrame({"storm_name":storm_name, "year":storm_year, "config":i, "min_dist(km)":min_dist, "avg_dist(km)":avg_dist}, index=[0]) 
+                    df = pd.concat([df, new_row], ignore_index=True)
+                except FileNotFoundError as e:
+                    pass
+        # Compute normalised min and avg distance.
+        for storm_name, group in df.groupby(["storm_name", "year"]):
+            # Normalised min_dist
+            avg = group["min_dist(km)"].mean()
+            std = group["min_dist(km)"].std()
+            for i in group.index:
+                normalised_min_dist = 0.0
+                if std != 0:
+                    normalised_min_dist = (df.loc[i, "min_dist(km)"] - avg)/std 
+                df.loc[i, "normalised_min_dist"] = normalised_min_dist
+            # Normalised avg_dist
+            avg = group["avg_dist(km)"].mean()
+            std = group["avg_dist(km)"].std()
+            for i in group.index:
+                normalised_avg_dist = (df.loc[i, "avg_dist(km)"] - avg)/std 
+                df.loc[i, "normalised_avg_dist"] = normalised_avg_dist
+        # Cluster the normalised results for plotting.
+        X = []
+        y = []
+        for config, group in df.groupby("config"):
+            for i in group.index:
+                xx = [group.loc[i, "normalised_min_dist"], group.loc[i, "normalised_avg_dist"]]
+                yy = group.loc[i, "config"]
+                X.append(xx)
+                y.append(yy)
+        X = np.array(X)
+        y = np.array(y)
+        kmeans = KMeans(n_clusters=3, random_state=43)
+        y_pred = kmeans.fit_predict(X)
+        resolution = 1000
+        mins = X.min(axis=0) - 0.1
+        maxs = X.max(axis=0) + 0.1
+        xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
+                         np.linspace(mins[1], maxs[1], resolution))
+        Z = kmeans.predict(np.c_[xx.ravel(), yy.ravel()])
+        Z = Z.reshape(xx.shape)
+        plt.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), cmap="Pastel2", alpha=0.5)
+        plt.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), linewidths=0.25, colors='grey')
+        # Scatter plot
+        colors = ["black", "green", "red"]
+        labels = self.deployment_names
+        legend_elements = []
+        for color, label in zip(colors, labels):
+            legend_elements.append(Patch(color=color, label=label))
+        for config, group in df.groupby("config"):
+            config = int(config)
+            plt.plot(group["normalised_min_dist"].to_list(), group["normalised_avg_dist"].to_list(), 'k.', color=colors[config], markersize=5)
+        # plt.axhline(0, linewidth=0.5, color="grey")
+        # plt.axvline(0, linewidth=0.5, color="grey")
+        plt.xlabel("Normalised minimum distance", fontsize=8)
+        plt.ylabel("Normalised average distance", fontsize=8)
+        plt.xticks(fontsize=4) # set the new x-axis labels
+        plt.yticks(fontsize=4) # set the new y-axis label size
+        plt.legend(handles=legend_elements, prop={'size': 6})
+        plt.savefig(str(summary_plot), bbox_inches='tight', dpi=600)
+        # plt.show()
+        plt.close()
+        plt.cla() # clear axis 
+        plt.clf() # clear figure    
 
 if __name__ == '__main__':   
     storm_tracking = Storm_tracking("HPC")
-    storm_tracking.run_all()
+    # storm_tracking.run_all()
+    storm_tracking.compute_performance()
