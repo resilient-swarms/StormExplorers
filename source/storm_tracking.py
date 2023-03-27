@@ -16,7 +16,7 @@ import multiprocessing as mp
 from datetime import datetime, timedelta
 from shapely.geometry import Polygon, LineString, Point
 from tqdm import tqdm
-from sklearn.cluster import KMeans
+from sklearn.neighbors import KNeighborsClassifier
 
 import epsg
 import cds
@@ -493,19 +493,19 @@ class Storm_tracking:
                 y.append(yy)
         X = np.array(X)
         y = np.array(y)
-        kmeans = KMeans(n_clusters=3, random_state=43)
-        y_pred = kmeans.fit_predict(X)
+        knn = KNeighborsClassifier(n_neighbors=100, weights="distance")
+        knn.fit(X, y)
         resolution = 1000
         mins = X.min(axis=0) - 0.1
         maxs = X.max(axis=0) + 0.1
         xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
                          np.linspace(mins[1], maxs[1], resolution))
-        Z = kmeans.predict(np.c_[xx.ravel(), yy.ravel()])
+        Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
         Z = Z.reshape(xx.shape)
         plt.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), cmap="Pastel2", alpha=0.5)
         plt.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), linewidths=0.25, colors='grey')
         # Scatter plot
-        colors = ["black", "green", "red"]
+        colors = ["green", "red", "black"]
         labels = self.deployment_names
         legend_elements = []
         for color, label in zip(colors, labels):
