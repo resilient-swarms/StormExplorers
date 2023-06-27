@@ -40,7 +40,7 @@ cpdef void get_ocean_current_data(int year, int month, str file_path):
             'month': str(month).zfill(2),
             'day': days,
             'version': 'vDT2021',
-            'variable': 'all',
+            'variable': 'daily',
             'format': 'tgz',
         }, file_path)
     # Open the downloaded tar file

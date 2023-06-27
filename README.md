@@ -13,7 +13,7 @@ conda config --set channel_priority strict
 Install packages.
 ```
 sudo apt install build-essential swig python3-dev
-conda install cartopy netcdf4 bs4 requests toml tqdm pandas cdsapi pyproj shapely adjusttext scikit-learn xgboost seaborn cython jupyterlab gxx_linux-64 gcc_linux-64 swig auto-sklearn
+conda install cartopy netcdf4 bs4 requests toml tqdm pandas cdsapi pyproj shapely adjusttext scikit-learn xgboost seaborn cython jupyterlab gxx_linux-64 gcc_linux-64 swig
 ```
 
 Follow the steps defined [here](https://cds.climate.copernicus.eu/api-how-to#install-the-cds-api-key) to install the CDS API key.
