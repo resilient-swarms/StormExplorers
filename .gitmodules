@@ -1,3 +1,3 @@
 [submodule "dependency/ASVLite"]
 	path = dependency/ASVLite
-	url = https://github.com/resilient-swarms/ASVLite.git
+	url = git@github.com:resilient-swarms/ASVLite.git
