@@ -2,8 +2,11 @@ import pathlib
 import sys
 module_dir = pathlib.Path(__file__).parent.resolve()
 root_dir = module_dir.parent
-model_dir = root_dir.joinpath("model")
+models_dir = root_dir.joinpath("models")
+results_dir = root_dir.joinpath("results")
 asvlite_wrapper_dir = root_dir.joinpath("dependency", "ASVLite", "wrapper", "cython")
+models_dir.mkdir(parents=True, exist_ok=True)
+results_dir.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(asvlite_wrapper_dir))
 import os
 import math
@@ -22,31 +25,14 @@ from sea_surface cimport py_Sea_surface
 from asv cimport py_Asv_specification, py_Asv
 from geometry cimport py_Coordinates_3D 
 from geometry import py_normalise_angle_PI, py_normalise_angle_2PI
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
-from joblib import load
+from joblib import dump, load
+
 
 _MPS_TO_KNOTS = 1.94384449 # 1 m/s = 1.94384449 knots
 
-# Load the model for thrust tuning
-_file_name = model_dir.joinpath("thrust_tuning_lin_reg_4.joblib")
-_thrust_tuning_factor_model = load(str(_file_name)) 
-
-def get_thrust_tuning_factor(wave_ht, zonal_current_velocity, meridional_current_velocity, vehicle_heading):
-    current_speed = math.sqrt(zonal_current_velocity*zonal_current_velocity + meridional_current_velocity*meridional_current_velocity) * _MPS_TO_KNOTS
-    theta = math.atan2(zonal_current_velocity, meridional_current_velocity)
-    theta = py_normalise_angle_2PI(theta)
-    relative_current_direction = abs(py_normalise_angle_PI(theta - vehicle_heading)) # (0, PI) radians
-    return _thrust_tuning_factor_model.predict([[wave_ht, current_speed, relative_current_direction]])
-
-
-# ===================================================================================
-
-# Compute the thrust tuning factors for each of the sea states by comparing simulated 
-# speed with the real-world speed.
-
-# ===================================================================================
 
 # These variables are declared globaly and not as a member of class __Thrust_tuning
 # to reduce memory consumption. While multiprocessing using concurrent.futures.ProcessPoolExecutor,
@@ -55,7 +41,9 @@ def get_thrust_tuning_factor(wave_ht, zonal_current_velocity, meridional_current
 # Care should be taken to make sure this vairalbe is only written to while NOT multi-processing. 
 _nc_data_wave = {} 
 _nc_data_current = {}
-class _Thrust_tuning:
+
+
+class Thrust_calibrator:
     def __init__(self, host_type):
         '''
         Valid values for host_type are the strings - "PC", "HPC"
@@ -66,12 +54,35 @@ class _Thrust_tuning:
         # Files and directories
         self.__download_wave_data()
         self.__download_ocean_current_data()
-        self.output_dir = root_dir.joinpath(*"results/glider_thrust/".split("/"))    
-        if not os.path.exists(self.output_dir):
-            os.makedirs(self.output_dir)
+        self.output_dir = results_dir.joinpath("glider_thrust")    
+        self.output_dir.mkdir(parents=True, exist_ok=True) # Create the directory if it does not exist.
         # Dataframe to hold both simulation and real-world data
         self.df = None
-    
+        # Load the default model for thrust tuning if file exists.
+        file_name = models_dir.joinpath("thrust_tuning_lin_reg_4.joblib")
+        self._thrust_tuning_factor_model = None
+        if os.path.exists(str(file_name)):
+            self._thrust_tuning_factor_model = load(str(file_name)) 
+        else:
+            print("Default model for thrust tuning factor does not exist.")
+            self._tune_wg_thrust()
+            self._thrust_tuning_factor_model = load(str(file_name)) 
+            print("Simulating segments of wave glider Benjamin's trans-Pacific voyage, using the model trained for glider thrust tuning...")
+            self._simulate_benjamin_using_thrust_tuning_model()
+
+
+    def get_thrust_tuning_factor(self, wave_ht, zonal_current_velocity, meridional_current_velocity, vehicle_heading):
+        current_speed = math.sqrt(zonal_current_velocity*zonal_current_velocity + meridional_current_velocity*meridional_current_velocity) * _MPS_TO_KNOTS
+        theta = math.atan2(zonal_current_velocity, meridional_current_velocity)
+        theta = py_normalise_angle_2PI(theta)
+        relative_current_direction = abs(py_normalise_angle_PI(theta - vehicle_heading)) # (0, PI) radians
+        return self._thrust_tuning_factor_model.predict([[wave_ht, current_speed, relative_current_direction]])
+
+
+    def set_thrust_tuning_model(self, path_to_model):
+        self._thrust_tuning_factor_model = load(str(path_to_model)) 
+
+
     def __load_log_files(self, log_files):
         for log_file in log_files:
             # Load log data to dataframe
@@ -90,7 +101,7 @@ class _Thrust_tuning:
             df["delta_x"] = df.apply(lambda row: row["p2.x"] - row["p1.x"] if (row["p2.x"] * row["p1.x"] >= 0.0) else row["p2.x"] + row["p1.x"], axis=1)
             df["delta_y"] = df.apply(lambda row: row["p2.y"] - row["p1.y"] if (row["p2.y"] * row["p1.y"] >= 0.0) else row["p2.y"] + row["p1.y"], axis=1)
             df["distance(m)"] = ((df["delta_x"]**2 + df["delta_y"]**2)**0.5)
-            df["delta_T(s)"] = (df["Timestamp(UTC)"].shift(-1) - df["Timestamp(UTC)"]).astype('timedelta64[s]')
+            df["delta_T(s)"] = df["Timestamp(UTC)"].diff().apply(lambda x: x/np.timedelta64(1, 's')).fillna(0).astype('float64')
             df["delta_T_simulated(s)"] = pd.NA # Will be set in rull_all()
             df["speed(knots)"] = _MPS_TO_KNOTS * df["distance(m)"]/ df["delta_T(s)"]
             df["speed_simulated(knots)"] = pd.NA # Will be set in rull_all()
@@ -138,7 +149,8 @@ class _Thrust_tuning:
             else:
                 self.df = pd.concat([self.df, df], axis=0, ignore_index=True)
             print("Loaded log file {}".format(log_file))
-           
+
+
     def __download_wave_data(self):
         '''
         Downloads the wave data for the period Nov-2011 to Feb-2013 from CDS.
@@ -209,6 +221,7 @@ class _Thrust_tuning:
             else:
                 print("Found {}".format(file))
     
+
     def __load_wave_nc_files(self, file_names):
         _nc_data_wave.clear()
         cds_dir = root_dir.joinpath("data", "cds", "pacx", "waves")
@@ -217,6 +230,7 @@ class _Thrust_tuning:
             _nc_data_wave[file_name] = NetCDF_wave(str(nc_file))
             print("Loaded wave data file {}".format(file_name))
     
+
     def __load_current_nc_files(self, year_month_pairs):
         _nc_data_current.clear()
         cds_dir = root_dir.joinpath("data", "cds", "pacx", "ocean_currents")
@@ -233,6 +247,7 @@ class _Thrust_tuning:
                     days_not_loaded.append(day)
             print("Loaded ocean current data files for the period {}-{}-[{} to {}]{}".format(year, str(month).zfill(2), days_loaded[0], days_loaded[-1], 
                   "; could not find files for the days {}".format(days_not_loaded) if len(days_not_loaded) != 0 else ""))
+
 
     def __get_wave_data_at(self, longitude, latitude, time):
         year = time.year
@@ -252,13 +267,15 @@ class _Thrust_tuning:
             v_zonal, v_meridional = (0, 0)
         return (v_zonal, v_meridional)
     
+
     def __get_heading(self, long1, lat1, long2, lat2):
         fwd_azimuth, back_azimuth, distance = self.geodesic.inv(long1, lat1, long2, lat2)
         fwd_azimuth = fwd_azimuth if fwd_azimuth >= 0.0 else (360 + fwd_azimuth)
         fwd_azimuth = fwd_azimuth * math.pi/180
         return fwd_azimuth # radians
 
-    def run(self, params):
+
+    def _run(self, params):
         i, proximity_margin, update_tuning_for_sea_state, thrust_tuning_factor = params
         is_simulation_complete = False
         # Wave glider specs
@@ -295,7 +312,7 @@ class _Thrust_tuning:
         # Initialise the wave glider
         cdef py_Asv asv = py_Asv(asv_spec, sea_surface, start_position_PCS, start_attitude)
         if update_tuning_for_sea_state == True:
-            thrust_tuning_factor = get_thrust_tuning_factor(wave_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
+            thrust_tuning_factor = self.get_thrust_tuning_factor(wave_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
         asv.py_wg_set_thrust_tuning_factor(thrust_tuning_factor)
         # Initialise the rudder controller
         rudder_controller = Rudder_PID_controller(asv_spec, [1.25, 0.25, 1.75])
@@ -347,7 +364,7 @@ class _Thrust_tuning:
                 rudder_angle = rudder_controller.get_rudder_angle(asv, py_Coordinates_3D(waypoint_x, waypoint_y))
                 # Update thrust tuning factor
                 if update_tuning_for_sea_state == True:
-                    thrust_tuning_factor = get_thrust_tuning_factor(new_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
+                    thrust_tuning_factor = self.get_thrust_tuning_factor(new_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
                     asv.py_wg_set_thrust_tuning_factor(thrust_tuning_factor)
                 # Compute dynamics
                 try:
@@ -366,59 +383,7 @@ class _Thrust_tuning:
             distance = math.sqrt(dx*dx + dy*dy) # m
             speed = _MPS_TO_KNOTS * distance/((time - simulation_start_time).total_seconds()) # knots
             return (is_simulation_complete, i, time, speed)
-    
-    def run_benjamin(self):
-        self.df = None # Clear the dataframe so that it will contain only Benjamin's log and not logs from tuning.
-        benjamin_log_file = root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/benjamin/moseg_benjamin.txt".split("/"))
-        self.__load_log_files([benjamin_log_file])
-        # Multithread the runs but groupby month for the multithreading.
-        results = []
-        for group_name, group in self.df.groupby(["year", "month"]):
-            #Ref: https://github.com/tqdm/tqdm/discussions/1121
-            # Multiprocessing 
-            executor = ProcessPoolExecutor()
-            year, month = group_name
-            rows = group.index
-            group.drop(group.index, inplace=True) # Group is a copy of the rows from self.df. Delete the group to save memory.
-            month_1 = month 
-            month_2 = (month+1) % 12 if (month+1) > 12 else (month+1)
-            year_1 = year 
-            year_2 = year+1 if month_2<month_1 else year
-            file_name_1 = "{}_{}.nc".format(year_1, str(month_1).zfill(2))
-            file_name_2 = "{}_{}.nc".format(year_2, str(month_2).zfill(2))
-            self.__load_wave_nc_files([file_name_1, file_name_2])
-            self.__load_current_nc_files([(year_1, month_1), (year_2, month_2)])
-            update_tuning_for_sea_state = True
-            tuning_factor = None # Will be set in run() since update_tuning_for_sea_state = True
-            params = [(i, self.proximity_margin, update_tuning_for_sea_state, tuning_factor) for i in rows]
-            jobs = [executor.submit(self.run, param) for param in params] # Parameters to be passed to method run()
-            if self.host_type == "HPC":
-                jobs = as_completed(jobs)
-            elif self.host_type == "PC":
-                # Running on a personal computer, show tqdm progress bar
-                jobs = tqdm(as_completed(jobs), total=len(jobs)) # Get a progress bar.
-                jobs.set_description("{} {}".format(year, str(month).zfill(2)))
-            else:
-                raise ValueError("Incorrect value for the variable host_type.")
-            for job in jobs:
-                results.append(job.result())
-        for result in results:
-            is_simulation_complete = result[0]
-            if is_simulation_complete:
-                is_simulation_complete, i, end_time, simulated_speed = result
-                self.df.loc[i, "delta_T_simulated(s)"] = (end_time - self.df.loc[i, "Timestamp(UTC)"]).total_seconds() if is_simulation_complete else end_time
-                self.df.loc[i, "speed_simulated(knots)"] = simulated_speed
-                self.df.loc[i, "error_msg"] = pd.NA
-            else:
-                self.df.loc[i, "delta_T_simulated(s)"] = pd.NA
-                self.df.loc[i, "speed_simulated(knots)"] = pd.NA
-                self.df.loc[i, "error_msg"] = result[2]
-        # Write the dataframe to file
-        benjamin_output_dir = self.output_dir.joinpath("benjamin")    
-        benjamin_output_dir.mkdir(parents=True, exist_ok=True)
-        benjamin_output_file = benjamin_output_dir.joinpath("simulation_data.csv")
-        self.df.to_csv(str(benjamin_output_file))
-        print("Benjamin simulation results written to {}".format(benjamin_output_file))
+
 
     def _tune_instance(self, params):
         i, tuning_factor, recursion_depth = params
@@ -427,7 +392,7 @@ class _Thrust_tuning:
         actual_speed = self.df.loc[i, "speed(knots)"]
         result = None 
         try:
-            result = self.run(params)
+            result = self._run(params)
         except Exception as e:
             # Simulation failed
             is_simulation_complete = False
@@ -476,7 +441,11 @@ class _Thrust_tuning:
                 error_msg = msg
                 return (is_simulation_complete, i, time, simulated_speed, tuning_factor, error_msg)
     
+
     def _run_tuning(self, log_files, out_file_name):
+        '''
+        Compute the thrust tuning factors for each of the sea states by comparing simulated speed with the real-world speed.
+        '''
         self.df = None # Clear the dataframe. 
         self.__load_log_files(log_files)
         for month_name, month_group in self.df.groupby(["year", "month"]):
@@ -493,7 +462,7 @@ class _Thrust_tuning:
             tuning_factor = 1.0
             recursion_depth = 0
             params = [(i, tuning_factor, recursion_depth) for i in month_group.index]
-            jobs = [executor.submit(self._tune_instance, param) for param in params] # Parameters to be passed to method run()
+            jobs = [executor.submit(self._tune_instance, param) for param in params] # Parameters to be passed to method _run()
             if self.host_type == "HPC":
                 jobs = as_completed(jobs)
             elif self.host_type == "PC":
@@ -514,12 +483,167 @@ class _Thrust_tuning:
             tuning_output_file = tuning_output_dir.joinpath(out_file_name) 
             self.df.to_csv(str(tuning_output_file))
 
-    def tune_wg_thrust(self):
+
+    def _generate_thrust_tuning_data(self, generate_training_data=False, generate_validation_data=False):
         # Training data
-        training_files = [root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/fontaine_maru/moseg_fontaine.txt".split("/")),
-                          root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/papa_mau/moseg_papamau.txt".split("/")),
-                          root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/piccard_maru/moseg_piccard.txt".split("/"))]
-        self._run_tuning(training_files, "tuning_factors_for_training.csv")
+        if generate_training_data == True:
+            print("Generating the training data ... This could take a very long time.")
+            training_files = [root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/fontaine_maru/moseg_fontaine.txt".split("/")),
+                            root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/papa_mau/moseg_papamau.txt".split("/")),
+                            root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/piccard_maru/moseg_piccard.txt".split("/"))]
+            self._run_tuning(training_files, "tuning_factors_for_training.csv")
         # Validation data
-        validation_file = [root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/benjamin/moseg_benjamin.txt".split("/"))]
-        self._run_tuning(validation_file, "tuning_factors_for_validation.csv")
+        if generate_validation_data == True:
+            print("Generating the validation data ... This could take a very long time.")
+            validation_file = [root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/benjamin/moseg_benjamin.txt".split("/"))]
+            self._run_tuning(validation_file, "tuning_factors_for_validation.csv")
+
+
+    def _tune_wg_thrust(self, regenerate_tuning_data=False, regenerate_tuning_models=False):
+        # Check if the tuning models exist, if not then generte it.
+        path_to_model_thrust_tuning_lin_reg_1 = models_dir.joinpath(*"thrust_tuning_lin_reg_1.joblib".split("/"))
+        model_thrust_tuning_lin_reg_1_exists  = os.path.isfile(str(path_to_model_thrust_tuning_lin_reg_1))
+
+        path_to_model_thrust_tuning_lin_reg_2 = models_dir.joinpath(*"thrust_tuning_lin_reg_2.joblib".split("/"))
+        model_thrust_tuning_lin_reg_2_exists  = os.path.isfile(str(path_to_model_thrust_tuning_lin_reg_2))
+
+        path_to_model_thrust_tuning_lin_reg_3 = models_dir.joinpath(*"thrust_tuning_lin_reg_3.joblib".split("/"))
+        model_thrust_tuning_lin_reg_3_exists  = os.path.isfile(str(path_to_model_thrust_tuning_lin_reg_3))
+
+        path_to_model_thrust_tuning_lin_reg_4 = models_dir.joinpath(*"thrust_tuning_lin_reg_4.joblib".split("/"))
+        model_thrust_tuning_lin_reg_4_exists  = os.path.isfile(str(path_to_model_thrust_tuning_lin_reg_4))
+
+        path_to_model_thrust_tuning_xgboost   = models_dir.joinpath(*"thrust_tuning_xgboost.joblib".split("/"))
+        model_thrust_tuning_xgboost_exists    = os.path.isfile(str(path_to_model_thrust_tuning_xgboost))
+
+        if (not (model_thrust_tuning_lin_reg_1_exists and 
+        model_thrust_tuning_lin_reg_2_exists and 
+        model_thrust_tuning_lin_reg_3_exists and 
+        model_thrust_tuning_lin_reg_4_exists and 
+        model_thrust_tuning_xgboost_exists)) or regenerate_tuning_models:           
+            # Generate model:
+            print("Generating models for thrust tuning factor...")
+            # Check if the data files are available, if not then generte it.
+            path_to_training_data    = results_dir.joinpath(*"glider_thrust/tuning/tuning_factors_for_training.csv".split("/"))
+            path_to_validation_data  = results_dir.joinpath(*"glider_thrust/tuning/tuning_factors_for_validation.csv".split("/"))
+            generate_training_data   = (not os.path.isfile(str(path_to_training_data))) or regenerate_tuning_data
+            generate_validation_data = (not os.path.isfile(str(path_to_validation_data))) or regenerate_tuning_data
+            self._generate_thrust_tuning_data(generate_training_data, generate_validation_data)
+            # Load the training data
+            cols_to_use = ["Timestamp(UTC)",
+                        "distance(m)",
+                        "delta_T(s)",
+                        "delta_T_simulated(s)",
+                        "speed(knots)",
+                        "speed_simulated(knots)",
+                        "simulated_wave_height(m)",
+                        "current(knots)",
+                        "relative_current_direction",
+                        "tuning_factor",
+                        "error_msg"]
+            df = pd.read_csv(path_to_training_data, usecols = cols_to_use)
+            df["relative_current_direction(abs)"] = df["relative_current_direction"].abs()
+            df = df[df["tuning_factor"].notna()]
+            df.reset_index(drop=True, inplace=True)
+            # Group segments based on simuated wave heights
+            for i in range(len(df)):
+                df.loc[i, "tuning_group"] = int(math.ceil(df.loc[i, "simulated_wave_height(m)"]))
+            # Remove outliers 
+            q_1  = df["tuning_factor"].quantile(0.01)
+            q_99 = df["tuning_factor"].quantile(0.99)
+            df = df[(df["tuning_factor"] < q_99) & (df["tuning_factor"] > q_1)]
+            # Split test and training data
+            X = df[["simulated_wave_height(m)", "current(knots)", "relative_current_direction(abs)"]].values
+            y = df["tuning_factor"].values
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+            # Generate each model
+            # Model 1 - Linear regression based only on wave height
+            if not model_thrust_tuning_lin_reg_1_exists:
+                model_1 = LinearRegression().fit(np.array([row[0] for row in X_train]).reshape(-1, 1), np.array(y_train))
+                print("Saving model - Linear regression based only on wave height to {}".format(path_to_model_thrust_tuning_lin_reg_1))
+                dump(model_1, str(path_to_model_thrust_tuning_lin_reg_1))
+            # Model 2 - Linear regression using wave height, current speed and direction
+            if not model_thrust_tuning_lin_reg_2_exists:
+                model_2 = LinearRegression().fit(X_train, y_train)
+                print("Saving model - Linear regression using wave height, current speed and direction to {}".format(path_to_model_thrust_tuning_lin_reg_2))
+                dump(model_2, str(path_to_model_thrust_tuning_lin_reg_2))
+            # Model 3 - XGBoost
+            if not model_thrust_tuning_xgboost_exists:
+                model_3 = XGBRegressor().fit(X_train, y_train)
+                print("Saving model - XGBoost using wave height, current speed and direction to {}".format(path_to_model_thrust_tuning_xgboost))
+                dump(model_3, str(path_to_model_thrust_tuning_xgboost))
+            # Models using uniform population 
+            # Create a new training data with a max of 200 instances from each group
+            max_count = 200
+            df_new = pd.DataFrame()
+            for group_name, group in df.groupby("tuning_group"):
+                if len(group) > max_count:
+                    df_new = pd.concat([df_new, group.sample(max_count)])
+                else:
+                    df_new = pd.concat([df_new, group])
+            X_train = df_new[["simulated_wave_height(m)", "current(knots)", "relative_current_direction(abs)"]].values
+            y_train = df_new["tuning_factor"].values
+            # Model 4 - Linear regression with uniform population
+            if not model_thrust_tuning_lin_reg_3_exists:
+                model_4 = LinearRegression().fit(np.array([row[0] for row in X_train]).reshape(-1, 1), np.array(y_train))
+                print("Saving model - Linear regression with uniform population, usng only wave height, to {}".format(path_to_model_thrust_tuning_lin_reg_3))
+                dump(model_4, str(path_to_model_thrust_tuning_lin_reg_3))
+            # Model 5 - Linear regression with uniform population and taking wave and current
+            if not model_thrust_tuning_lin_reg_4_exists:
+                model_5 = LinearRegression().fit(X_train, y_train)
+                print("Saving model - Linear regression with uniform population, useing wave and current, to{}".format(path_to_model_thrust_tuning_lin_reg_4))
+                dump(model_5, str(path_to_model_thrust_tuning_lin_reg_4))
+
+
+    def _simulate_benjamin_using_thrust_tuning_model(self):
+        self.df = None # Clear the dataframe so that it will contain only Benjamin's log and not logs from tuning.
+        benjamin_log_file = root_dir.joinpath(*"data/pacx/logs/1.1/data/0-data/PacX_NODC_master_folder/benjamin/moseg_benjamin.txt".split("/"))
+        self.__load_log_files([benjamin_log_file])
+        # Multithread the runs but groupby month for the multithreading.
+        results = []
+        for group_name, group in self.df.groupby(["year", "month"]):
+            #Ref: https://github.com/tqdm/tqdm/discussions/1121
+            # Multiprocessing 
+            executor = ProcessPoolExecutor()
+            year, month = group_name
+            rows = group.index
+            group.drop(group.index, inplace=True) # Group is a copy of the rows from self.df. Delete the group to save memory.
+            month_1 = month 
+            month_2 = (month+1) % 12 if (month+1) > 12 else (month+1)
+            year_1 = year 
+            year_2 = year+1 if month_2<month_1 else year
+            file_name_1 = "{}_{}.nc".format(year_1, str(month_1).zfill(2))
+            file_name_2 = "{}_{}.nc".format(year_2, str(month_2).zfill(2))
+            self.__load_wave_nc_files([file_name_1, file_name_2])
+            self.__load_current_nc_files([(year_1, month_1), (year_2, month_2)])
+            update_tuning_for_sea_state = True
+            tuning_factor = None # Will be set in _run() since update_tuning_for_sea_state = True
+            params = [(i, self.proximity_margin, update_tuning_for_sea_state, tuning_factor) for i in rows]
+            jobs = [executor.submit(self._run, param) for param in params] # Parameters to be passed to method _run()
+            if self.host_type == "HPC":
+                jobs = as_completed(jobs)
+            elif self.host_type == "PC":
+                # Running on a personal computer, show tqdm progress bar
+                jobs = tqdm(as_completed(jobs), total=len(jobs)) # Get a progress bar.
+                jobs.set_description("{} {}".format(year, str(month).zfill(2)))
+            else:
+                raise ValueError("Incorrect value for the variable host_type.")
+            for job in jobs:
+                results.append(job.result())
+        for result in results:
+            is_simulation_complete = result[0]
+            if is_simulation_complete:
+                is_simulation_complete, i, end_time, simulated_speed = result
+                self.df.loc[i, "delta_T_simulated(s)"] = (end_time - self.df.loc[i, "Timestamp(UTC)"]).total_seconds() if is_simulation_complete else end_time
+                self.df.loc[i, "speed_simulated(knots)"] = simulated_speed
+                self.df.loc[i, "error_msg"] = pd.NA
+            else:
+                self.df.loc[i, "delta_T_simulated(s)"] = pd.NA
+                self.df.loc[i, "speed_simulated(knots)"] = pd.NA
+                self.df.loc[i, "error_msg"] = result[2]
+        # Write the dataframe to file
+        benjamin_output_dir = self.output_dir.joinpath("benjamin")    
+        benjamin_output_dir.mkdir(parents=True, exist_ok=True)
+        benjamin_output_file = benjamin_output_dir.joinpath("simulation_data.csv")
+        self.df.to_csv(str(benjamin_output_file))
+        print("Benjamin simulation results written to {}".format(benjamin_output_file))
