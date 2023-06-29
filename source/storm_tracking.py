@@ -26,7 +26,7 @@ from netcdf import NetCDF_wave, NetCDF_current
 from sea_surface import py_Sea_surface
 from asv import py_Asv_specification, py_Asv
 from geometry import py_Coordinates_3D, py_normalise_angle_PI, py_normalise_angle_2PI 
-from glider_thrust_factor import get_thrust_tuning_factor
+from thrust_calibrator import Thrust_calibrator
 from storm import Storm
 
 _MPS_TO_KNOTS = 1.94384449 # 1 m/s = 1.94384449 knots
@@ -146,6 +146,8 @@ class Storm_tracking:
         # Initialise the rudder controller
         rudder_controller = Rudder_PID_controller(asv_spec, [1.25, 0.25, 1.75])
         rudder_angle = 0.0  
+        # Initialise the thrust calibrator
+        thrust_calibrator = Thrust_calibrator(self.host_type)
         # Initialise time to start of simulation
         time = start_time - timedelta(seconds=_SIMULATION_TIME_STEP_SIZE/1000.0)  
         # Simulate till last waypoint
@@ -177,7 +179,7 @@ class Storm_tracking:
             # Set rudder angle
             rudder_angle = rudder_controller.get_rudder_angle(asv, py_Coordinates_3D(waypoint_x, waypoint_y))
             # Update thrust tuning factor
-            thrust_tuning_factor = get_thrust_tuning_factor(new_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
+            thrust_tuning_factor = thrust_calibrator.get_thrust_tuning_factor(new_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
             asv.py_wg_set_thrust_tuning_factor(thrust_tuning_factor)
             # Compute dynamics
             try:

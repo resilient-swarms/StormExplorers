@@ -76,7 +76,8 @@ class Thrust_calibrator:
         theta = math.atan2(zonal_current_velocity, meridional_current_velocity)
         theta = py_normalise_angle_2PI(theta)
         relative_current_direction = abs(py_normalise_angle_PI(theta - vehicle_heading)) # (0, PI) radians
-        return self._thrust_tuning_factor_model.predict([[wave_ht, current_speed, relative_current_direction]])
+        [tuning_factor] = self._thrust_tuning_factor_model.predict([[wave_ht, current_speed, relative_current_direction]])
+        return tuning_factor
 
 
     def set_thrust_tuning_model(self, path_to_model):

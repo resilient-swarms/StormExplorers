@@ -15,7 +15,7 @@ extensions = []
 extensions.append(Extension("cds", sources=["cds.pyx"]))
 extensions.append(Extension("epsg", sources=["epsg.pyx"]))
 extensions.append(Extension("netcdf", sources=["netcdf.pyx"]))
-extensions.append(Extension("glider_thrust_factor", sources=["glider_thrust_factor.pyx"]))
+extensions.append(Extension("thrust_calibrator", sources=["thrust_calibrator.pyx"]))
 
 asvlite_include_dir = root_dir.joinpath("dependency", "ASVLite", "include")
 setup(ext_modules=cythonize(extensions, language_level = "3"), include_dirs=[np.get_include(), asvlite_include_dir])
