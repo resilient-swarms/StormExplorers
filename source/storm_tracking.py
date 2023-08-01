@@ -59,6 +59,26 @@ class Storm_tracking:
         diagonal_SW_NE_geom = LineString([(x0, y0), (x1, y1)]) 
         diagonal_length = diagonal_NW_SE_geom.length   # m
         swarm_spacing = diagonal_length/(self.swarm_size+1) # m
+
+        # Config baseline MAX
+        points = ((-85.0, 19.0), (-84.0, 19.0), (-85.0, 18.0), (-84.0, 18.0), (-83.0, 18.0), (-82.0, 18.0), (-84.0, 17.0), (-83.0, 17.0), (-82.0, 17.0))
+        max_deployment = []
+        for point in points:
+            long, lat = point
+            x, y = epsg.GCS_to_PCS(long, lat)
+            max_deployment.append(Point(x, y))
+        self.deployment_names.append("MAX")
+        self.deployments.append(max_deployment)
+        # Config baseline MIN
+        points = ((-84.0, 21.0), (-83.0, 21.0), (-82.0, 21.0), (-84.0, 20.0), (-83.0, 20.0), (-82.0, 20.0), (-83.0, 19.0), (-82.0, 19.0), (-81.0, 19.0))
+        min_deployment = []
+        for point in points:
+            long, lat = point
+            x, y = epsg.GCS_to_PCS(long, lat)
+            min_deployment.append(Point(x, y))
+        self.deployment_names.append("MIN")
+        self.deployments.append(min_deployment)
+
         # Config 0
         NW_SE_deployment = []
         for i in range(1, self.swarm_size+1):
@@ -88,6 +108,7 @@ class Storm_tracking:
         square_deployment= [p0, p01, p1, p03, p_c, p12, p3, p23, p2]
         self.deployment_names.append("SQU")
         self.deployments.append(square_deployment)
+        
         # Set the list of storms that pass through the deployment region
         self._set_storms()
         # Messages
@@ -455,7 +476,7 @@ class Storm_tracking:
             storm_name = self.storms.loc[storm_index, "storm_name"]
             storm_year = self.storms.loc[storm_index, "year"]
             storm_dir = results_dir.joinpath("{}_{}".format(int(storm_year), storm_name))
-            for i in range(3):
+            for i in range(len(self.deployments)):
                 config_dir = storm_dir.joinpath("config_{}".format(i))
                 file_name = config_dir.joinpath("performance.csv")
                 peformance_df = None
@@ -473,16 +494,18 @@ class Storm_tracking:
             # Normalised min_dist
             avg = group["min_dist(km)"].mean()
             std = group["min_dist(km)"].std()
+            max = group["min_dist(km)"].max()
             for i in group.index:
                 normalised_min_dist = 0.0
                 if std != 0:
-                    normalised_min_dist = (df.loc[i, "min_dist(km)"] - avg)/std 
+                    normalised_min_dist = (df.loc[i, "min_dist(km)"] - avg)/max 
                 df.loc[i, "normalised_min_dist"] = normalised_min_dist
             # Normalised avg_dist
             avg = group["avg_dist(km)"].mean()
             std = group["avg_dist(km)"].std()
+            max = group["avg_dist(km)"].max()
             for i in group.index:
-                normalised_avg_dist = (df.loc[i, "avg_dist(km)"] - avg)/std 
+                normalised_avg_dist = (df.loc[i, "avg_dist(km)"] - avg)/max 
                 df.loc[i, "normalised_avg_dist"] = normalised_avg_dist
         # Cluster the normalised results for plotting.
         X = []
@@ -495,7 +518,7 @@ class Storm_tracking:
                 y.append(yy)
         X = np.array(X)
         y = np.array(y)
-        knn = KNeighborsClassifier(n_neighbors=100, weights="distance")
+        knn = KNeighborsClassifier(n_neighbors=78, weights="distance") # Note: experiment with different values for n_neighbors
         knn.fit(X, y)
         resolution = 1000
         mins = X.min(axis=0) - 0.1
