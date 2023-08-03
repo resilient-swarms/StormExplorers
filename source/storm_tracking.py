@@ -60,8 +60,8 @@ class Storm_tracking:
         diagonal_length = diagonal_NW_SE_geom.length   # m
         swarm_spacing = diagonal_length/(self.swarm_size+1) # m
 
-        # Config baseline MAX
-        points = ((-85.0, 19.0), (-84.0, 19.0), (-85.0, 18.0), (-84.0, 18.0), (-83.0, 18.0), (-82.0, 18.0), (-84.0, 17.0), (-83.0, 17.0), (-82.0, 17.0))
+        # Config 0 - baseline MAX
+        points = ((-86.0, 20.0), (-86.0, 19.0), (-85.0, 19.0), (-86.0, 18.0), (-85.0, 18.0), (-84.0, 18.0), (-85.0, 17.0), (-84.0, 17.0), (-83.0, 17.0))
         max_deployment = []
         for point in points:
             long, lat = point
@@ -69,8 +69,8 @@ class Storm_tracking:
             max_deployment.append(Point(x, y))
         self.deployment_names.append("MAX")
         self.deployments.append(max_deployment)
-        # Config baseline MIN
-        points = ((-84.0, 21.0), (-83.0, 21.0), (-82.0, 21.0), (-84.0, 20.0), (-83.0, 20.0), (-82.0, 20.0), (-83.0, 19.0), (-82.0, 19.0), (-81.0, 19.0))
+        # Config 1 - baseline MIN
+        points = ((-85.5, 21.5), (-84.5, 21.5), (-83.5, 21.5), (-84.5, 20.5), (-83.5, 20.5), (-82.5, 20.5), (-83.5, 19.5), (-82.5, 19.5), (-81.5, 18.5))
         min_deployment = []
         for point in points:
             long, lat = point
@@ -79,7 +79,7 @@ class Storm_tracking:
         self.deployment_names.append("MIN")
         self.deployments.append(min_deployment)
 
-        # Config 0
+        # Config 2 - NW-SE
         NW_SE_deployment = []
         for i in range(1, self.swarm_size+1):
             dist = i*swarm_spacing
@@ -87,7 +87,7 @@ class Storm_tracking:
             NW_SE_deployment.append(p)
         self.deployment_names.append("NW-SE")
         self.deployments.append(NW_SE_deployment)
-        # Config 1
+        # Config 3 - SW-NE
         SW_NE_deployment = []
         for i in range(1, self.swarm_size+1):
             dist = i*swarm_spacing
@@ -95,7 +95,7 @@ class Storm_tracking:
             SW_NE_deployment.append(p)
         self.deployment_names.append("SW-NE")
         self.deployments.append(SW_NE_deployment)
-        # Config 2
+        # Config 4 - SQU
         p0 = SW_NE_deployment[0]
         p1 = NW_SE_deployment[-1]
         p2 = SW_NE_deployment[-1]
@@ -518,7 +518,7 @@ class Storm_tracking:
                 y.append(yy)
         X = np.array(X)
         y = np.array(y)
-        knn = KNeighborsClassifier(n_neighbors=78, weights="distance") # Note: experiment with different values for n_neighbors
+        knn = KNeighborsClassifier(n_neighbors=70, weights="distance") # Note: experiment with different values for n_neighbors
         knn.fit(X, y)
         resolution = 1000
         mins = X.min(axis=0) - 0.1
