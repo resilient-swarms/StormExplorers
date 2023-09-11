@@ -2,14 +2,17 @@ import pathlib
 import sys
 module_dir = pathlib.Path(__file__).parent.resolve()
 root_dir = module_dir.parent
+model_dir = root_dir.joinpath("models")
 asvlite_wrapper_dir = root_dir.joinpath("dependency", "ASVLite", "wrapper", "cython")
 sys.path.insert(0, str(asvlite_wrapper_dir))
+import os.path
 import math
 import multiprocessing as mp
 import pyproj
 import epsg
 import random
 import numpy as np
+import pandas as pd
 from tqdm import tqdm # to show a progress bar
 from sea_surface import py_Sea_surface
 from asv import py_Asv, py_Asv_specification
@@ -26,20 +29,32 @@ class Rudder_PID_controller:
         self.out_dir = root_dir.joinpath("results", "rudder_controller", "tuning")
         self.out_dir.mkdir(parents=True, exist_ok=True) # Create the out_dir if it does not exist.
         # P,I,D gain terms
-        if K == None:
-            initial_PIDs = []
-            for P in [random.randint(1,3), random.randint(1,3)]:
-                for I in [random.randint(1,3), random.randint(1,3)]:
-                    for D in [random.randint(1,3), random.randint(1,3)]:
-                        initial_PIDs.append([P,I,D])
-            initial_PIDs = tqdm(initial_PIDs, leave=False)   
-            initial_PIDs.set_description("Tuning iterations")  
-            for initial_PID in initial_PIDs:
-                P,I,D = initial_PID
-                self.K = np.array([P,I,D])
-                self._tune_controller()
-        else:
+        if K is not None:
             self.K = np.array(K)
+        else:
+            # K is None
+            # Check if PID file exist in models
+            rudder_PID_file = model_dir.joinpath("rudder_PID")
+            if os.path.isfile(str(rudder_PID_file)):
+                # PID values exist is file 
+                df_pid = pd.read_csv(rudder_PID_file)
+                self.K = np.array(df_pid.iloc[0])
+                print("Loading rudder PID from file - {}".format(rudder_PID_file))
+                print("P,I,D = ", self.K)
+            else:
+                # PID values not provided and does not exist in file.
+                initial_PIDs = []
+                for P in [random.randint(1,3), random.randint(1,3)]:
+                    for I in [random.randint(1,3), random.randint(1,3)]:
+                        for D in [random.randint(1,3), random.randint(1,3)]:
+                            initial_PIDs.append([P,I,D])
+                initial_PIDs = tqdm(initial_PIDs, leave=False)   
+                initial_PIDs.set_description("Tuning iterations")  
+                for initial_PID in initial_PIDs:
+                    P,I,D = initial_PID
+                    self.K = np.array([P,I,D])
+                    self._tune_controller()
+            
 
     def __relative_angle(self, asv, waypoint):
         theta = None
@@ -87,9 +102,8 @@ class Rudder_PID_controller:
         waypoint = py_Coordinates_3D(x, y, 0)
         # Init waves
         rand_seed = 1
-        count_wave_spectral_directions = 5
-        count_wave_spectral_frequencies = 7
-        wave = py_Sea_surface(significant_wave_ht, 0.0, rand_seed, count_wave_spectral_directions, count_wave_spectral_frequencies)
+        count_component_waves = 21
+        wave = py_Sea_surface(significant_wave_ht, 0.0, rand_seed, count_component_waves)
         # Init ASV
         time_step_size = 40 # milli sec
         attitude = py_Coordinates_3D(0.0, 0.0, asv_heading)

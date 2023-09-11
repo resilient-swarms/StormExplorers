@@ -302,21 +302,20 @@ class Thrust_calibrator:
         simulation_start_time = self.df.loc[i, "Timestamp(UTC)"]
         # Sea surface
         cdef int wave_rand_seed = random.randint(1,100)
-        cdef int count_wave_spectral_directions = 5
-        cdef int count_wave_spectral_frequencies = 7
+        cdef int count_component_waves = 21
         cdef double wave_hs, wave_dp
         wave_hs, wave_dp        = self.__get_wave_data_at(start_position_GCS.x, start_position_GCS.y, simulation_start_time) 
         v_zonal, v_meridional   = self.__get_ocean_current_at(start_position_GCS.x, start_position_GCS.y, simulation_start_time)
         if wave_hs == None or wave_hs == 0.0 or wave_dp == None:
             return (is_simulation_complete, i, float("NaN"), "Wave data not available.")
-        cdef py_Sea_surface sea_surface = py_Sea_surface(wave_hs, wave_dp, wave_rand_seed, count_wave_spectral_directions, count_wave_spectral_frequencies)
+        cdef py_Sea_surface sea_surface = py_Sea_surface(wave_hs, wave_dp, wave_rand_seed, count_component_waves)
         # Initialise the wave glider
         cdef py_Asv asv = py_Asv(asv_spec, sea_surface, start_position_PCS, start_attitude)
         if update_tuning_for_sea_state == True:
             thrust_tuning_factor = self.get_thrust_tuning_factor(wave_hs, v_zonal, v_meridional, asv.py_get_attitude().z)
         asv.py_wg_set_thrust_tuning_factor(thrust_tuning_factor)
         # Initialise the rudder controller
-        rudder_controller = Rudder_PID_controller(asv_spec, [1.25, 0.25, 1.75])
+        rudder_controller = Rudder_PID_controller(asv_spec)
         cdef double rudder_angle = 0.0  
         # Waypoint
         cdef py_Coordinates_3D waypoint = py_Coordinates_3D(self.df.loc[i, "Longitude2"], self.df.loc[i, "Latitude2"])
@@ -359,7 +358,7 @@ class Thrust_calibrator:
                 is_sea_state_same = (new_hs == current_hs) and (new_dp == current_dp)
                 # If the sea state has changed then, set the new sea state in the wave glider
                 if not is_sea_state_same:
-                    sea_surface = py_Sea_surface(new_hs, new_dp, wave_rand_seed, count_wave_spectral_directions, count_wave_spectral_frequencies)
+                    sea_surface = py_Sea_surface(new_hs, new_dp, wave_rand_seed, count_component_waves)
                     asv.py_set_sea_state(sea_surface)            
                 # Set rudder angle
                 rudder_angle = rudder_controller.get_rudder_angle(asv, py_Coordinates_3D(waypoint_x, waypoint_y))

@@ -155,17 +155,16 @@ class Storm_tracking:
         start_attitude = py_Coordinates_3D(0.0, 0.0, math.pi/2) # All wave gliders start with a heading towards East.
         # Sea surface
         wave_rand_seed = 1
-        count_wave_spectral_directions = 5
-        count_wave_spectral_frequencies = 7
+        count_component_waves = 21
         wave_hs, wave_dp        = storm.get_wave_data_at(start_position_GCS.x, start_position_GCS.y, start_time) 
         v_zonal, v_meridional   = storm.get_ocean_current_at(start_position_GCS.x, start_position_GCS.y, start_time)
         if wave_hs == None or wave_hs == 0.0 or wave_dp == None:
             return_dict[wg_name] = (is_simulation_complete, "Wave data not available.")
-        sea_surface = py_Sea_surface(wave_hs, wave_dp, wave_rand_seed, count_wave_spectral_directions, count_wave_spectral_frequencies)
+        sea_surface = py_Sea_surface(wave_hs, wave_dp, wave_rand_seed, count_component_waves)
         # Initialise the wave glider
         asv = py_Asv(asv_spec, sea_surface, start_position_PCS, start_attitude)
         # Initialise the rudder controller
-        rudder_controller = Rudder_PID_controller(asv_spec, [1.25, 0.25, 1.75])
+        rudder_controller = Rudder_PID_controller(asv_spec)
         rudder_angle = 0.0  
         # Initialise the thrust calibrator
         thrust_calibrator = Thrust_calibrator(self.host_type)
@@ -195,7 +194,7 @@ class Storm_tracking:
             is_sea_state_same = (new_hs == current_hs) and (new_dp == current_dp)
             # If the sea state has changed then, set the new sea state in the wave glider
             if not is_sea_state_same:
-                sea_surface = py_Sea_surface(new_hs, new_dp, wave_rand_seed, count_wave_spectral_directions, count_wave_spectral_frequencies)
+                sea_surface = py_Sea_surface(new_hs, new_dp, wave_rand_seed, count_component_waves)
                 asv.py_set_sea_state(sea_surface)            
             # Set rudder angle
             rudder_angle = rudder_controller.get_rudder_angle(asv, py_Coordinates_3D(waypoint_x, waypoint_y))
