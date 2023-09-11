@@ -37,7 +37,7 @@ class Rudder_PID_controller:
             rudder_PID_file = model_dir.joinpath("rudder_PID")
             if os.path.isfile(str(rudder_PID_file)):
                 # PID values exist is file 
-                df_pid = pd.read_csv(rudder_PID_file)
+                df_pid = pd.read_csv(rudder_PID_file, delim_whitespace=True)
                 self.K = np.array(df_pid.iloc[0])
                 print("Loading rudder PID from file - {}".format(rudder_PID_file))
                 print("P,I,D = ", self.K)
