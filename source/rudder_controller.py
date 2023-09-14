@@ -44,9 +44,9 @@ class Rudder_PID_controller:
             else:
                 # PID values not provided and does not exist in file.
                 initial_PIDs = []
-                for P in [random.randint(1,3), random.randint(1,3)]:
-                    for I in [random.randint(1,3), random.randint(1,3)]:
-                        for D in [random.randint(1,3), random.randint(1,3)]:
+                for P in [1,2]:
+                    for I in [1,2]:
+                        for D in [1,2]:
                             initial_PIDs.append([P,I,D])
                 initial_PIDs = tqdm(initial_PIDs, leave=False)   
                 initial_PIDs.set_description("Tuning iterations")  
