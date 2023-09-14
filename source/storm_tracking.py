@@ -517,7 +517,7 @@ class Storm_tracking:
                 y.append(yy)
         X = np.array(X)
         y = np.array(y)
-        knn = KNeighborsClassifier(n_neighbors=70, weights="distance") # Note: experiment with different values for n_neighbors
+        knn = KNeighborsClassifier(n_neighbors=75, weights="distance") # Note: experiment with different values for n_neighbors
         knn.fit(X, y)
         resolution = 1000
         mins = X.min(axis=0) - 0.1
@@ -529,7 +529,7 @@ class Storm_tracking:
         plt.contourf(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), cmap="Pastel2", alpha=0.5)
         plt.contour(Z, extent=(mins[0], maxs[0], mins[1], maxs[1]), linewidths=0.25, colors='grey')
         # Scatter plot
-        colors = ["green", "red", "black"]
+        colors = ["green", "red", "black", "blue", "violet"]
         labels = self.deployment_names
         legend_elements = []
         for color, label in zip(colors, labels):
