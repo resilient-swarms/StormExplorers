@@ -39,9 +39,13 @@ class Storm:
         self.storms_df = storms.get_storms()
         storm_index = self.storms_df.loc[(self.storms_df["year"]==year) & (self.storms_df["storm_name"]==storm_name)].index[0]
         # Download and load the wave and current data
-        self.nc_data_wave = {} 
+        self.nc_data_wave = {}
+        self.nc_data_wind = {}
+        self.nc_data_precipitation = {}
         self.nc_data_current = {}
         self._download_and_load_wave_data(storm_index)
+        self._download_and_load_wind_data(storm_index)
+        self._download_and_load_precipitation_data(storm_index)
         if init_ocean_current:
             self._download_and_load_ocean_current_data(storm_index)
         # Copy storm tracks
@@ -88,7 +92,65 @@ class Storm:
             # Load the file
             self.nc_data_wave[file] = NetCDF_wave(str(nc_file))
             print("Loaded wave data file {}".format(file))
-    
+
+    def _download_and_load_wind_data(self, storm_index):
+        nc_files = []
+        time_stamps = self.storms_df.loc[storm_index, "time_stamps"]
+        for j in (0,-1):
+            year  = time_stamps[j].year
+            month = time_stamps[j].month
+            nc_files.append("{}_{}.nc".format(year, str(month).zfill(2)))
+        nc_files= set(nc_files) # Make a unique list of the required nc files
+        # Check if the file exist, else download it.
+        wave_dir = root_dir.joinpath("data", "cds", "north_atlantic", "winds")
+        wave_dir.mkdir(parents=True, exist_ok=True) # Make the dir if it does not exist.
+        for file in nc_files:
+            nc_file = wave_dir.joinpath(file)
+            if not os.path.exists(str(nc_file)):
+                print(nc_file)
+                # nc file does not exist, download it.
+                year, month = file[:-3].split("_")
+                cds.get_wave_data(int(year), int(month),
+                                  self.map_boundary_north,
+                                  self.map_boundary_south,
+                                  self.map_boundary_east,
+                                  self.map_boundary_west,
+                                  str(nc_file))
+            else:
+                print("Found {}".format(file))
+            # Load the file
+            self.nc_data_wind[file] = NetCDF_wind(str(nc_file))
+            print("Loaded wind data file {}".format(file))
+
+    def _download_and_load_precipitation_data(self, storm_index):
+        nc_files = []
+        time_stamps = self.storms_df.loc[storm_index, "time_stamps"]
+        for j in (0,-1):
+            year  = time_stamps[j].year
+            month = time_stamps[j].month
+            nc_files.append("{}_{}.nc".format(year, str(month).zfill(2)))
+        nc_files= set(nc_files) # Make a unique list of the required nc files
+        # Check if the file exist, else download it.
+        wave_dir = root_dir.joinpath("data", "cds", "north_atlantic", "precipitation")
+        wave_dir.mkdir(parents=True, exist_ok=True) # Make the dir if it does not exist.
+        for file in nc_files:
+            nc_file = wave_dir.joinpath(file)
+            if not os.path.exists(str(nc_file)):
+                print(nc_file)
+                # nc file does not exist, download it.
+                year, month = file[:-3].split("_")
+                cds.get_wave_data(int(year), int(month),
+                                  self.map_boundary_north,
+                                  self.map_boundary_south,
+                                  self.map_boundary_east,
+                                  self.map_boundary_west,
+                                  str(nc_file))
+            else:
+                print("Found {}".format(file))
+            # Load the file
+            self.nc_data_precipitation[file] = NetCDF_precipitation(str(nc_file))
+            print("Loaded precipitation data file {}".format(file))
+
     def _download_and_load_ocean_current_data(self, storm_index):
         tar_files = []
         time_stamps = self.storms_df.loc[storm_index, "time_stamps"]
@@ -131,6 +193,26 @@ class Storm:
         file_name = "{}_{}.nc".format(year, str(month).zfill(2))
         wave_hs, wave_dp = self.nc_data_wave[file_name].get_wave_data_at(longitude, latitude, time)
         return (wave_hs, wave_dp)
+
+    def get_wind_speed_at(self, longitude, latitude, time):
+        '''
+        Returns the eastward and northward wind velocities for a given location and time.
+        '''
+        year = time.year
+        month = time.month
+        file_name = "{}_{}.nc".format(year, str(month).zfill(2))
+        u, v = self.nc_data_wind[file_name].get_wind_speed_at(longitude, latitude, time)
+        return (u, v)
+
+    def get_precipitation_at(self, longitude, latitude, time):
+        '''
+        Returns the total precipitation for a given location and time.
+        '''
+        year = time.year
+        month = time.month
+        file_name = "{}_{}.nc".format(year, str(month).zfill(2))
+        tp = self.nc_data_precipitation[file_name].get_precipitation_at(longitude, latitude, time)
+        return tp
 
     def get_ocean_current_at(self, longitude, latitude, time):
         year = time.year
