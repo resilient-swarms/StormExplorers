@@ -9,7 +9,7 @@ cdef class NetCDF_wave:
     '''
     def __cinit__(self, file_path) -> None:
         data = nc.Dataset(file_path)
-        self._epoch_time = datetime(1900, 1, 1)
+        self._epoch_time = datetime(1970, 1, 1)
         # Longitude range
         self._first_longitude = data.variables["longitude"][0].item()
         self._last_longitude = data.variables["longitude"][-1].item()
@@ -19,9 +19,9 @@ cdef class NetCDF_wave:
         self._last_latitude = data.variables["latitude"][-1].item()
         self._delta_latitude = data.variables["latitude"][1].item() - data.variables["latitude"][0].item()
         # Time range
-        self._first_time = data.variables["time"][0].item()
-        self._last_time = data.variables["time"][-1].item()
-        self._delta_time = data.variables["time"][1].item() - data.variables["time"][0].item()
+        self._first_time = data.variables["valid_time"][0].item()
+        self._last_time = data.variables["valid_time"][-1].item()
+        self._delta_time = data.variables["valid_time"][1].item() - data.variables["valid_time"][0].item()
         # Numpy array of significant wave hts and wave headings. 
         # These arrays consume significant memory, but can significantly improve runtime speed when 
         # fetching the wave data for a location and time.  
@@ -103,9 +103,9 @@ cdef class NetCDF_wind:
         self._last_latitude = data.variables["latitude"][-1].item()
         self._delta_latitude = data.variables["latitude"][1].item() - data.variables["latitude"][0].item()
         # Time range
-        self._first_time = data.variables["time"][0].item()
-        self._last_time = data.variables["time"][-1].item()
-        self._delta_time = data.variables["time"][1].item() - data.variables["time"][0].item()
+        self._first_time = data.variables["valid_time"][0].item()
+        self._last_time = data.variables["valid_time"][-1].item()
+        self._delta_time = data.variables["valid_time"][1].item() - data.variables["valid_time"][0].item()
         # Numpy array of eastward and northward wind velocities.
         self._u = data.variables["u10"][:].data # numpy array of dtype=float32 of shape (len_time, len_latitude, len_longitude)
         self._v = data.variables["v10"][:].data # numpy array of dtype=float32 of shape (len_time, len_latitude, len_longitude)
@@ -165,9 +165,9 @@ cdef class NetCDF_precipitation:
         self._last_latitude = data.variables["latitude"][-1].item()
         self._delta_latitude = data.variables["latitude"][1].item() - data.variables["latitude"][0].item()
         # Time range
-        self._first_time = data.variables["time"][0].item()
-        self._last_time = data.variables["time"][-1].item()
-        self._delta_time = data.variables["time"][1].item() - data.variables["time"][0].item()
+        self._first_time = data.variables["valid_time"][0].item()
+        self._last_time = data.variables["valid_time"][-1].item()
+        self._delta_time = data.variables["valid_time"][1].item() - data.variables["valid_time"][0].item()
         # Numpy array of total precipitation.
         self._tp = data.variables["tp"][:].data # numpy array of dtype=float32 of shape (len_time, len_latitude, len_longitude)
 

@@ -7,7 +7,7 @@ import epsg
 import pathlib
 from shapely.geometry import LineString, Point
 from shapely.ops import nearest_points
-from netcdf import NetCDF_wave, NetCDF_current
+from netcdf import NetCDF_wave, NetCDF_current, NetCDF_wind, NetCDF_precipitation
 import cds
 from storms_archive import Storms_archieve
 from datetime import datetime
@@ -110,7 +110,7 @@ class Storm:
                 print(nc_file)
                 # nc file does not exist, download it.
                 year, month = file[:-3].split("_")
-                cds.get_wave_data(int(year), int(month),
+                cds.get_wind_data(int(year), int(month),
                                   self.map_boundary_north,
                                   self.map_boundary_south,
                                   self.map_boundary_east,
@@ -139,7 +139,7 @@ class Storm:
                 print(nc_file)
                 # nc file does not exist, download it.
                 year, month = file[:-3].split("_")
-                cds.get_wave_data(int(year), int(month),
+                cds.get_precipitation_data(int(year), int(month),
                                   self.map_boundary_north,
                                   self.map_boundary_south,
                                   self.map_boundary_east,

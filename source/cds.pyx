@@ -5,7 +5,7 @@ import os
 
 cpdef void _get_reanalysis_era5_single_levels_data(int year, int month, double north, double south, double east, double west, list variables, str file_path):
     '''
-    Retrieve data from Climate Data Store (CDS): https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview
+    Retrieve data from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
     '''
     client = cdsapi.Client()
     client.retrieve('reanalysis-era5-single-levels',
@@ -32,7 +32,7 @@ cpdef void _get_reanalysis_era5_single_levels_data(int year, int month, double n
 
 cpdef void get_wave_data(int year, int month, double north, double south, double east, double west, str file_path):
     '''
-    Retrieve wave data from Climate Data Store (CDS): https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview
+    Retrieve wave data from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
     '''
     cdef list variables = ['mean_wave_direction', 'significant_height_of_combined_wind_waves_and_swell']
     _get_reanalysis_era5_single_levels_data(year, month, north, south, east, west, variables, file_path)
@@ -40,7 +40,7 @@ cpdef void get_wave_data(int year, int month, double north, double south, double
 
 cpdef void get_precipitation_data(int year, int month, double north, double south, double east, double west, str file_path):
     '''
-    Retrieve total precipitation from Climate Data Store (CDS): https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview
+    Retrieve total precipitation from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
     '''
     cdef list variables = ['total_precipitation',]
     _get_reanalysis_era5_single_levels_data(year, month, north, south, east, west, variables, file_path)
@@ -48,12 +48,15 @@ cpdef void get_precipitation_data(int year, int month, double north, double sout
 
 cpdef void get_wind_data(int year, int month, double north, double south, double east, double west, str file_path):
     '''
-    Retrieve wind speed data from Climate Data Store (CDS): https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview
+    Retrieve wind speed data from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
     '''
     cdef list variables = ['10m_u_component_of_wind', '10m_v_component_of_wind',]
     _get_reanalysis_era5_single_levels_data(year, month, north, south, east, west, variables, file_path)
 
 cpdef void get_ocean_current_data(int year, int month, str file_path):
+    '''
+    Retrieve ocean current data from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/satellite-sea-level-global?tab=overview
+    '''
     client = cdsapi.Client()
     days = []
     for day in range(1,32):

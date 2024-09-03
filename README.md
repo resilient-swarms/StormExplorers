@@ -16,7 +16,7 @@ sudo apt install build-essential swig python3-dev
 conda install cartopy netcdf4 bs4 requests toml tqdm pandas cdsapi pyproj shapely adjusttext scikit-learn xgboost seaborn cython jupyterlab gxx_linux-64 gcc_linux-64 swig
 ```
 
-Follow the steps defined [here](https://cds.climate.copernicus.eu/api-how-to#install-the-cds-api-key) to install the CDS API key.
+Follow the steps defined [here](https://cds-beta.climate.copernicus.eu/how-to-api) to install the CDS API key.
 
 Although not a dependency for ASVLite, having the following tools will be useful to explore netCDF (.nc) files.
 
