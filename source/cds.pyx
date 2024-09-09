@@ -2,32 +2,42 @@ import cdsapi
 import pathlib
 import zipfile
 import os
+import sys
 
 cpdef void _get_reanalysis_era5_single_levels_data(int year, int month, double north, double south, double east, double west, list variables, str file_path):
     '''
     Retrieve data from Climate Data Store (CDS): https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview
     '''
     client = cdsapi.Client()
-    client.retrieve('reanalysis-era5-single-levels',
-        {
-            'product_type': 'reanalysis',
-            'variable': variables,
-            'year': year,
-            'month': month,
-            'day': list(range(32)),
-            'time': [
-                '00:00', '01:00', '02:00',
-                '03:00', '04:00', '05:00',
-                '06:00', '07:00', '08:00',
-                '09:00', '10:00', '11:00',
-                '12:00', '13:00', '14:00',
-                '15:00', '16:00', '17:00',
-                '18:00', '19:00', '20:00',
-                '21:00', '22:00', '23:00',
-            ],
-            'area': [north, west, south, east],
-            "format": "netcdf"
-        }, file_path)
+    dataset = "reanalysis-era5-single-levels"
+    request = {
+        'product_type': 'reanalysis',
+        'variable': variables,
+        'year': year,
+        'month': month,
+        'day': list(range(32)),
+        'time': [
+            '00:00', '01:00', '02:00',
+            '03:00', '04:00', '05:00',
+            '06:00', '07:00', '08:00',
+            '09:00', '10:00', '11:00',
+            '12:00', '13:00', '14:00',
+            '15:00', '16:00', '17:00',
+            '18:00', '19:00', '20:00',
+            '21:00', '22:00', '23:00',
+        ],
+        'area': [north, west, south, east],
+        "format": "netcdf"
+    }
+    data_fetched = None
+    while data_fetched is None:
+        try:
+            data_fetched = client.retrieve(dataset, request).download(file_path)
+        except KeyboardInterrupt:
+            sys.exit("\nKeyboard Interrupt!")
+        except Exception as e:
+            data_fetched = None
+            continue
 
 
 cpdef void get_wave_data(int year, int month, double north, double south, double east, double west, str file_path):
@@ -69,7 +79,15 @@ cpdef void get_ocean_current_data(int year, int month, str file_path):
         'day': days,
         'version': 'vdt2021'
     }
-    client.retrieve(dataset, request).download(file_path)
+    data_fetched = None
+    while data_fetched is None:
+        try:
+            data_fetched = client.retrieve(dataset, request).download(file_path)
+        except KeyboardInterrupt:
+            sys.exit("\nKeyboard Interrupt!")
+        except Exception as e:
+            data_fetched = None
+            continue
     # Open and extract the downloaded zip file
     archieve_dir = pathlib.Path(file_path).parent.resolve()
     with zipfile.ZipFile(file_path, 'r') as zip_ref:
