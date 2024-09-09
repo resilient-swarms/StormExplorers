@@ -152,22 +152,22 @@ class Storm:
             print("Loaded precipitation data file {}".format(file))
 
     def _download_and_load_ocean_current_data(self, storm_index):
-        tar_files = []
+        zip_files = []
         time_stamps = self.storms_df.loc[storm_index, "time_stamps"]
         for j in (0,-1):
             year  = time_stamps[j].year
             month = time_stamps[j].month
-            tar_files.append("{}_{}.tar.gz".format(year, str(month).zfill(2)))
-        tar_files = set(tar_files) # Make a unique list of the required nc files
+            zip_files.append("{}_{}.zip".format(year, str(month).zfill(2)))
+        zip_files = set(zip_files) # Make a unique list of the required nc files
         # Check if the file exist, else download it.
         ocean_current_dir = root_dir.joinpath("data", "cds", "north_atlantic", "ocean_currents")
         ocean_current_dir.mkdir(parents=True, exist_ok=True) # Make the dir if it does not exist.
-        for file in tar_files:
-            tar_file = ocean_current_dir.joinpath(file)
-            year, month = file[:-7].split("_")
-            if not os.path.exists(str(tar_file)):
+        for file in zip_files:
+            zip_file = ocean_current_dir.joinpath(file)
+            year, month = file[:-4].split("_")
+            if not os.path.exists(str(zip_file)):
                 # tar file does not exist, download it.
-                cds.get_ocean_current_data(int(year), int(month), str(tar_file))
+                cds.get_ocean_current_data(int(year), int(month), str(zip_file))
             else:
                 print("Found {}".format(file))
             # Load the file
